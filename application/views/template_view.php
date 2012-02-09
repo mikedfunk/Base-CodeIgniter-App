@@ -10,7 +10,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <?php
-	
+// assets
+lessc::ccompile($style_dir.'styles/styles.less', $style_dir.'styles/styles.css');
+$this->carabiner->css('styles/styles.css');
+
+$this->carabiner->css('twitter_bootstrap/docs/assets/css/bootstrap.css');
+$this->carabiner->js('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+$this->carabiner->display();
 ?>
 
     <!-- HTML5 shim, for IE6-8 support of HTML elements -->

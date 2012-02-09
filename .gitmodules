@@ -8,3 +8,9 @@
 [submodule "tests/assets/scripts/jquery-hasEventListener"]
 	path = tests/assets/scripts/jquery-hasEventListener
 	url = git://github.com/sebastien-p/jquery.hasEventListener.git
+[submodule "assets/twitter_bootstrap"]
+	path = assets/twitter_bootstrap
+	url = git@github.com:mikedfunk/bootstrap.git
+[submodule "application/libraries/less_css"]
+	path = application/libraries/less_css
+	url = git://github.com/leafo/lessphp.git

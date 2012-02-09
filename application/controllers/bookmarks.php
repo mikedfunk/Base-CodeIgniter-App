@@ -28,6 +28,29 @@ class bookmarks extends CI_Controller
 	// --------------------------------------------------------------------------
 	
 	/**
+	 * _data
+	 * 
+	 * @var mixed
+	 * @access private
+	 */
+	private $_data;
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * __construct function.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
 	 * list_bookmarks function.
 	 * 
 	 * @access public
@@ -35,9 +58,19 @@ class bookmarks extends CI_Controller
 	 */
 	public function list_bookmarks()
 	{
-		$this->load->spark('assets/0.6.3');
-		$data['content'] = $this->load->view('list_bookmarks_view', '', TRUE);
-		$this->load->view('template_view', $data);
+		// load resources
+		require_once(FCPATH.APPPATH.'libraries/less_css/lessc.inc.php');
+		$this->load->library('carabiner');
+		$this->config->load('carabiner', TRUE);
+		
+		// for testing to work
+		$fcpath = str_replace('application/third_party/CIUnit/', '', FCPATH);
+		$this->_data['style_dir'] = $fcpath . $this->config->item('style_dir', 'carabiner');
+		$this->_data['script_dir'] = $fcpath . $this->config->item('script_dir', 'carabiner');
+		
+		// load view
+		$this->_data['content'] = $this->load->view('list_bookmarks_view', '', TRUE);
+		$this->load->view('template_view', $this->_data);
 	}
 	// --------------------------------------------------------------------------
 }
