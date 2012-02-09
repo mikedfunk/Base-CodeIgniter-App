@@ -3,10 +3,10 @@
  * 
  * Description
  * 
- * @license		Copyright Xulon Press, Inc. All Rights Reserved.
- * @author		Xulon Press
- * @link		http://xulonpress.com
- * @email		info@xulonpress.com
+ * @license		Copyright Mike Funk. All Rights Reserved.
+ * @author		Mike Funk
+ * @link		http://mikefunk.com
+ * @email		mike@mikefunk.com
  * 
  * @file		test_scripts.js
  * @version		1.0
