@@ -55,6 +55,7 @@ class bookmarks extends CI_Controller
 		
 		// load resources
 		require_once($fcpath.$apppath.'libraries/less_css/lessc.inc.php');
+		$this->load->add_package_path($fcpath.$apppath.'third_party/carabiner');
 		$this->load->library('carabiner');
 		$this->config->load('carabiner', TRUE);
 		$this->load->add_package_path($fcpath.$apppath.'third_party/bookmarks');
