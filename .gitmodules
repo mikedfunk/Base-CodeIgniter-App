@@ -14,3 +14,6 @@
 [submodule "application/libraries/less_css"]
 	path = application/libraries/less_css
 	url = git://github.com/leafo/lessphp.git
+[submodule "application/third_party/carabiner"]
+	path = application/third_party/carabiner
+	url = git@github.com:mikedfunk/carabiner.git
