@@ -1,0 +1,5 @@
+web1: #component type & number
+  name: bookymark            #component settings
+  shared_writable_dirs:
+    - /assets/cache
+    - /assets/db_cache

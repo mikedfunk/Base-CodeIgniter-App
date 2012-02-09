@@ -74,20 +74,6 @@ class bookmarks extends CI_Controller
 	}
 	
 	// --------------------------------------------------------------------------
-	
-	/**
-	 * fix_permissions function.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	public function fix_permissions()
-	{
-		shell_exec('cd '.FCPATH);
-		shell_exec('chmod 777 assets/cache');	
-	}
-	
-	// --------------------------------------------------------------------------
 }
 /* End of file bookmarks.php */
 /* Location: ./bookymark/application/controllers/bookmarks.php */
