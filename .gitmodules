@@ -5,3 +5,6 @@
 [submodule "tests/assets/scripts/jquery-mockjax"]
 	path = tests/assets/scripts/jquery-mockjax
 	url = git://github.com/appendto/jquery-mockjax.git
+[submodule "tests/assets/scripts/jquery-hasEventListener"]
+	path = tests/assets/scripts/jquery-hasEventListener
+	url = git://github.com/sebastien-p/jquery.hasEventListener.git
