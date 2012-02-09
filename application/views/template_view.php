@@ -11,11 +11,15 @@
 
 <?php
 // assets
-lessc::ccompile($style_dir.'styles/styles.less', $style_dir.'styles/styles.css');
-$this->carabiner->css('styles/styles.css');
+lessc::ccompile($style_dir.'twitter_bootstrap/less/bootstrap.less', $style_dir.'cache/bootstrap.css');
+$this->carabiner->css('cache/bootstrap.css');
 
-$this->carabiner->css('twitter_bootstrap/docs/assets/css/bootstrap.css');
+lessc::ccompile($style_dir.'styles/styles.less', $style_dir.'cache/styles.css');
+$this->carabiner->css('cache/styles.css');
+
 $this->carabiner->js('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+$this->carabiner->js('scripts/actions.js');
+$this->carabiner->js('scripts/scripts.js');
 $this->carabiner->display();
 ?>
 
@@ -36,5 +40,13 @@ $this->carabiner->display();
   </head>
   <body>
   <?=$content?>
+  <footer>
+<div class="footer">
+<hr />
+<div class="container">
+<p>&copy;2012 Mike Funk. All Rights Reserved.</p>
+</div><!--container-->
+</div><!--footer-->
+</footer>
   </body>
 </html>
