@@ -1,0 +1,28 @@
+*user_guide
+*application/logs/log-*.php
+
+# -----------
+# *assets/cache/*.js
+# *assets/cache/*.css
+# ----------- 
+
+*assets/scripts/tiny_mce/*.gz
+
+*assets/temp/*
+!.gitignore
+
+*assets/uploads/*
+!.gitignore
+
+*application/db_cache/*
+!.gitignore
+
+*application/db_backups/*
+!.gitignore
+
+*github/*
+
+*application/libraries/mpdf-5.3/ttfontdata/*
+!.gitignore
+
+*.DS_Store
