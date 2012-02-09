@@ -27,9 +27,17 @@ class bookmarks extends CI_Controller
 {
 	// --------------------------------------------------------------------------
 	
+	/**
+	 * list_bookmarks function.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	public function list_bookmarks()
 	{
-		$this->load->view('list_bookmarks_view');
+		$this->load->spark('assets/0.6.3');
+		$data['content'] = $this->load->view('list_bookmarks_view', '', TRUE);
+		$this->load->view('template_view', $data);
 	}
 	// --------------------------------------------------------------------------
 }
