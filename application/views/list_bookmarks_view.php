@@ -1,19 +1,44 @@
-<div class="navbar navbar-fixed-top">
-<div class="navbar-inner">
-    <div class="fill">
-      <div class="container">
-        <a class="brand" href="#/admin/home">Bookymark <?php /*<sup>&reg;</sup> */ ?></a>
-        </div><!--container-->
-        </div><!--fill-->
-        </div><!--navbar-inner-->
-</div><!--navbar-->
 <section>
 <div class="container">
 <div class="page-header">
 <h1>My Bookymarks</h1>
 </div><!--page-header-->
-<div class="well">
+<p>
 <a class="btn btn-success">Add Bookmark</a>
-</div><!--well-->
+</p>
+<?php
+// loop through bookmarks
+if ($bookmarks->num_rows() > 0):
+	$result = $bookmarks->result();
+?>
+<table class="table">
+<thead>
+<tr>
+<th>
+	URL
+</th>
+<th>
+	Description
+</th>
+</tr>
+</thead>
+<?php 
+	foreach ($result as $item):
+?>
+<tr>
+<td><?=$item->url?></td>
+<td><?=$item->description?></td>
+</tr>
+<?php 
+	endforeach;
+?>
+</table>
+<?php
+else:
+?>
+<div class="alert alert-error ">No bookymarks found. Add one!</div>
+<?php
+endif; 
+?>
 </div><!--container-->
 </section>

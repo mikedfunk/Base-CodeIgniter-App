@@ -39,6 +39,7 @@ $this->carabiner->display();
 */ ?>
   </head>
   <body>
+  <?=$header?>
   <?=$content?>
   <footer>
 <div class="footer">
