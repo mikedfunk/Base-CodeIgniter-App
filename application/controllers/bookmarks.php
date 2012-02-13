@@ -58,7 +58,6 @@ class bookmarks extends CI_Controller
 		$this->load->add_package_path($fcpath.$apppath.'third_party/carabiner');
 		$this->load->library('carabiner');
 		$this->config->load('carabiner', TRUE);
-		$this->load->add_package_path($fcpath.$apppath.'third_party/bookmarks');
 		
 		// set style and script dirs
 		$this->_data['style_dir'] = $fcpath . $this->config->item('style_dir', 'carabiner');
