@@ -88,7 +88,8 @@ class bookmarks extends CI_Controller
 		$this->pagination->initialize($config);
 		
 		// get bookmarks
-		$opts = array_merge($this->input->get(), array('limit' => $this->config->item('per_page')));
+		$get = (is_array($this->input->get()) ? $this->input->get() : array());
+		$opts = array_merge($get, array('limit' => $this->config->item('per_page')));
 		$this->_data['bookmarks'] = $this->bookmarks_model->bookmarks_table($opts);
 		
 		// load view
