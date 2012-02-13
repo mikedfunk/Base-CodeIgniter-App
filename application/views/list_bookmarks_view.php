@@ -34,7 +34,9 @@
                 </tr><?php 
                     endforeach;
                 ?>
-            </table><?php
+            </table>
+			<?=$this->pagination->create_links()?>
+            <?php
             else:
             ?>
 

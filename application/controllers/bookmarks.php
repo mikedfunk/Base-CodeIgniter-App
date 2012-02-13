@@ -73,11 +73,23 @@ class bookmarks extends CI_Controller
 	 * @return void
 	 */
 	public function list_bookmarks()
-	{
-		// get bookmarks
+	{	
 		$this->load->database();
 		$this->load->model('bookmarks_model');
-		$this->_data['bookmarks'] = $this->bookmarks_model->bookmarks_table();
+		
+		// pagination
+		$this->load->library('pagination');
+		$this->config->load('pagination');
+		$opts = $this->input->get();
+		unset($opts['page']);
+		$q = $this->bookmarks_model->bookmarks_table($opts);
+		$config['base_url'] = 'list_bookmarks?';
+		$config['total_rows'] = $this->data['total_rows'] = $q->num_rows();
+		$this->pagination->initialize($config);
+		
+		// get bookmarks
+		$opts = array_merge($this->input->get(), array('limit' => $this->config->item('per_page')));
+		$this->_data['bookmarks'] = $this->bookmarks_model->bookmarks_table($opts);
 		
 		// load view
 		$this->_data['header'] = $this->load->view('header_only_view', $this->_data, TRUE);
