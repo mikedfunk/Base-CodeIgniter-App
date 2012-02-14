@@ -56,6 +56,19 @@ class bookmarks_Test extends CIUnit_TestCase
 	// --------------------------------------------------------------------------
 	
 	/**
+	 * tearDown function.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function tearDown()
+	{
+		parent::tearDown();
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
 	 * test_list_bookmarks function.
 	 * 
 	 * @access public
@@ -87,19 +100,6 @@ class bookmarks_Test extends CIUnit_TestCase
 		// delete bookmark
 		$this->_ci->db->where('id', $bookmark_id);
 		$this->_ci->db->delete('bookmarks');
-	}
-	
-	// --------------------------------------------------------------------------
-	
-	/**
-	 * tearDown function.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	public function tearDown()
-	{
-		parent::tearDown();
 	}
 	
 	// --------------------------------------------------------------------------
