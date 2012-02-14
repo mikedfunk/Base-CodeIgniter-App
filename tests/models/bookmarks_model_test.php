@@ -105,7 +105,11 @@ class bookmarks_model_test extends CIUnit_TestCase
 		$bookmark_id = $this->_ci->db->insert_id();
 		
 		// test
-		$q = $this->_ci->bookmarks_model->bookmarks_table();
+		$opts = array(
+			'ids_only' => true,
+			'sort_by' => 'id'
+		);
+		$q = $this->_ci->bookmarks_model->bookmarks_table($opts);
 		$this->assertGreaterThan(0, $q->num_rows());
 		
 		// delete bookmark
