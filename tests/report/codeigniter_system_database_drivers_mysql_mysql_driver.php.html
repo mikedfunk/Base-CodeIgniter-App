@@ -71,12 +71,12 @@
           <td class="coverNumLo">4 / 31</td>
           <td class="crap"><acronym title="Change Risk Anti-Patterns (CRAP) Index">CRAP</acronym></td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="30.22%">
-                <div class="size scarlet_red"  style="width:30.21978021978%" title="30.22%"></div>
+            <div class="coverBarOutline" title="32.97%">
+                <div class="size scarlet_red"  style="width:32.967032967033%" title="32.97%"></div>
             </div>
           </td>
-          <td class="coverPerLo">30.22%</td>
-          <td class="coverNumLo">55 / 182</td>
+          <td class="coverPerLo">32.97%</td>
+          <td class="coverNumLo">60 / 182</td>
         </tr>
 
         <tr>
@@ -95,14 +95,14 @@
           </td>
           <td class="coverPerLo">12.90%</td>
           <td class="coverNumLo">4 / 31</td>
-          <td class="crap">2290.83</td>
+          <td class="crap">2039.85</td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="29.83%">
-                <div class="size scarlet_red"  style="width:29.834254143646%" title="29.83%"></div>
+            <div class="coverBarOutline" title="32.60%">
+                <div class="size scarlet_red"  style="width:32.596685082873%" title="32.60%"></div>
             </div>
           </td>
-          <td class="coverPerLo">29.83%</td>
-          <td class="coverNumLo">54 / 181</td>
+          <td class="coverPerLo">32.60%</td>
+          <td class="coverNumLo">59 / 181</td>
         </tr>
 
         <tr>
@@ -665,14 +665,14 @@
           </td>
           <td class="coverPerLo">0.00%</td>
           <td class="coverNumLo">0 / 1</td>
-          <td class="crap">6</td>
+          <td class="crap">2.02</td>
           <td class="coverBar">
-              <div class="coverBarOutline" title="0.00%">
-                  <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
+              <div class="coverBarOutline" title="83.33%">
+                  <div class="size chameleon"  style="width:83.333333333333%" title="83.33%"></div>
               </div>
           </td>
-          <td class="coverPerLo">0.00%</td>
-          <td class="coverNumLo">0 / 6</td>
+          <td class="coverPerHi">83.33%</td>
+          <td class="coverNumHi">5 / 6</td>
         </tr>
 
         <tr>
@@ -1455,16 +1455,16 @@
 <span class="lineNum" id="container746"><a name="746"></a><a href="#746" id="line746">     746</a> </span>                :      */                                                                                                                                                          
 <span class="lineNum" id="container747"><a name="747"></a><a href="#747" id="line747">     747</a> </span>                :     function _limit($sql, $limit, $offset)                                                                                                                       
 <span class="lineNum" id="container748"><a name="748"></a><a href="#748" id="line748">     748</a> </span>                :     {                                                                                                                                                            
-<span class="lineNum" id="container749"><a name="749"></a><a href="#749" id="line749">     749</a> </span><span class="lineNoCov">              0 :         if ($offset == 0)                                                                                                                                        </span>
-<span class="lineNum" id="container750"><a name="750"></a><a href="#750" id="line750">     750</a> </span><span class="lineNoCov">              0 :         {                                                                                                                                                        </span>
-<span class="lineNum" id="container751"><a name="751"></a><a href="#751" id="line751">     751</a> </span><span class="lineNoCov">              0 :             $offset = '';                                                                                                                                        </span>
-<span class="lineNum" id="container752"><a name="752"></a><a href="#752" id="line752">     752</a> </span><span class="lineNoCov">              0 :         }                                                                                                                                                        </span>
+<span class="lineNum" id="container749"><a name="749"></a><a href="#749" id="line749">     749</a> </span><span class="lineCov">              1 :         if ($offset == 0)                                                                                                                                        </span>
+<span class="lineNum" id="container750"><a name="750"></a><a href="#750" id="line750">     750</a> </span><span class="lineCov">              1 :         {                                                                                                                                                        </span>
+<span class="lineNum" id="container751"><a name="751"></a><a href="#751" id="line751">     751</a> </span><span class="lineCov">              1 :             $offset = '';                                                                                                                                        </span>
+<span class="lineNum" id="container752"><a name="752"></a><a href="#752" id="line752">     752</a> </span><span class="lineCov">              1 :         }                                                                                                                                                        </span>
 <span class="lineNum" id="container753"><a name="753"></a><a href="#753" id="line753">     753</a> </span>                :         else                                                                                                                                                     
 <span class="lineNum" id="container754"><a name="754"></a><a href="#754" id="line754">     754</a> </span>                :         {                                                                                                                                                        
 <span class="lineNum" id="container755"><a name="755"></a><a href="#755" id="line755">     755</a> </span><span class="lineNoCov">              0 :             $offset .= &quot;, &quot;;                                                                                                                                     </span>
 <span class="lineNum" id="container756"><a name="756"></a><a href="#756" id="line756">     756</a> </span>                :         }                                                                                                                                                        
 <span class="lineNum" id="container757"><a name="757"></a><a href="#757" id="line757">     757</a> </span>                :                                                                                                                                                                  
-<span class="lineNum" id="container758"><a name="758"></a><a href="#758" id="line758">     758</a> </span><span class="lineNoCov">              0 :         return $sql.&quot;LIMIT &quot;.$offset.$limit;                                                                                                                     </span>
+<span class="lineNum" id="container758"><a name="758"></a><a href="#758" id="line758">     758</a> </span><span class="lineCov">              1 :         return $sql.&quot;LIMIT &quot;.$offset.$limit;                                                                                                                     </span>
 <span class="lineNum" id="container759"><a name="759"></a><a href="#759" id="line759">     759</a> </span>                :     }                                                                                                                                                            
 <span class="lineNum" id="container760"><a name="760"></a><a href="#760" id="line760">     760</a> </span>                :                                                                                                                                                                  
 <span class="lineNum" id="container761"><a name="761"></a><a href="#761" id="line761">     761</a> </span>                :     // --------------------------------------------------------------------                                                                                      
@@ -1493,7 +1493,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.1</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.8</a> and PHPUnit 3.6.10 at Wed Feb 8 23:46:06 EST 2012.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.1</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.8</a> and PHPUnit 3.6.10 at Tue Feb 14 9:54:46 EST 2012.</td></tr>
     </table>
 
     <br />
@@ -1776,6 +1776,31 @@
         "panel731": {
           "header": "2 tests cover line 731",
           "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li><li class=\"testPassed\">bookmarks_model_test::test_bookmarks_table</li></ul>",
+          "footer": ""
+        },
+        "panel749": {
+          "header": "1 test covers line 749",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel750": {
+          "header": "1 test covers line 750",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel751": {
+          "header": "1 test covers line 751",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel752": {
+          "header": "1 test covers line 752",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel758": {
+          "header": "1 test covers line 758",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
           "footer": ""
         },
       "dummy": ""

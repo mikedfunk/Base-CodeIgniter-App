@@ -63,20 +63,20 @@
           <td class="coverPerLo">0.00%</td>
           <td class="coverNumLo">0 / 1</td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="14.81%">
-                <div class="size scarlet_red"  style="width:14.814814814815%" title="14.81%"></div>
+            <div class="coverBarOutline" title="18.52%">
+                <div class="size scarlet_red"  style="width:18.518518518519%" title="18.52%"></div>
             </div>
           </td>
-          <td class="coverPerLo">14.81%</td>
-          <td class="coverNumLo">4 / 27</td>
+          <td class="coverPerLo">18.52%</td>
+          <td class="coverNumLo">5 / 27</td>
           <td class="crap"><acronym title="Change Risk Anti-Patterns (CRAP) Index">CRAP</acronym></td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="28.32%">
-                <div class="size scarlet_red"  style="width:28.322440087146%" title="28.32%"></div>
+            <div class="coverBarOutline" title="30.07%">
+                <div class="size scarlet_red"  style="width:30.065359477124%" title="30.07%"></div>
             </div>
           </td>
-          <td class="coverPerLo">28.32%</td>
-          <td class="coverNumLo">130 / 459</td>
+          <td class="coverPerLo">30.07%</td>
+          <td class="coverNumLo">138 / 459</td>
         </tr>
 
         <tr>
@@ -89,20 +89,20 @@
           <td class="coverPerLo">0.00%</td>
           <td class="coverNumLo">0 / 1</td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="14.81%">
-                <div class="size scarlet_red"  style="width:14.814814814815%" title="14.81%"></div>
+            <div class="coverBarOutline" title="18.52%">
+                <div class="size scarlet_red"  style="width:18.518518518519%" title="18.52%"></div>
             </div>
           </td>
-          <td class="coverPerLo">14.81%</td>
-          <td class="coverNumLo">4 / 27</td>
-          <td class="crap">7887.58</td>
+          <td class="coverPerLo">18.52%</td>
+          <td class="coverNumLo">5 / 27</td>
+          <td class="crap">7336.39</td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="28.32%">
-                <div class="size scarlet_red"  style="width:28.322440087146%" title="28.32%"></div>
+            <div class="coverBarOutline" title="30.07%">
+                <div class="size scarlet_red"  style="width:30.065359477124%" title="30.07%"></div>
             </div>
           </td>
-          <td class="coverPerLo">28.32%</td>
-          <td class="coverNumLo">130 / 459</td>
+          <td class="coverPerLo">30.07%</td>
+          <td class="coverNumLo">138 / 459</td>
         </tr>
 
         <tr>
@@ -431,20 +431,20 @@
         <tr>
           <td class="coverFile" colspan="4">&nbsp;<a href="#645">add_package_path($path, $view_cascade=TRUE)</a></td>
           <td class="coverBar">
-            <div class="coverBarOutline" title="0.00%">
-                <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
+            <div class="coverBarOutline" title="100.00%">
+                <div class="size chameleon"  style="width:100%" title="100.00%"></div>
             </div>
           </td>
-          <td class="coverPerLo">0.00%</td>
-          <td class="coverNumLo">0 / 1</td>
-          <td class="crap">2</td>
+          <td class="coverPerHi">100.00%</td>
+          <td class="coverNumHi">1 / 1</td>
+          <td class="crap">1</td>
           <td class="coverBar">
-              <div class="coverBarOutline" title="0.00%">
-                  <div class="size scarlet_red"  style="width:0%" title="0.00%"></div>
+              <div class="coverBarOutline" title="100.00%">
+                  <div class="size chameleon"  style="width:100%" title="100.00%"></div>
               </div>
           </td>
-          <td class="coverPerLo">0.00%</td>
-          <td class="coverNumLo">0 / 8</td>
+          <td class="coverPerHi">100.00%</td>
+          <td class="coverNumHi">8 / 8</td>
         </tr>
 
         <tr>
@@ -1277,18 +1277,18 @@
 <span class="lineNum" id="container644"><a name="644"></a><a href="#644" id="line644">     644</a> </span>                :      */                                                                                                                                 
 <span class="lineNum" id="container645"><a name="645"></a><a href="#645" id="line645">     645</a> </span>                :     public function add_package_path($path, $view_cascade=TRUE)                                                                         
 <span class="lineNum" id="container646"><a name="646"></a><a href="#646" id="line646">     646</a> </span>                :     {                                                                                                                                   
-<span class="lineNum" id="container647"><a name="647"></a><a href="#647" id="line647">     647</a> </span><span class="lineNoCov">              0 :         $path = rtrim($path, '/').'/';                                                                                                  </span>
+<span class="lineNum" id="container647"><a name="647"></a><a href="#647" id="line647">     647</a> </span><span class="lineCov">              1 :         $path = rtrim($path, '/').'/';                                                                                                  </span>
 <span class="lineNum" id="container648"><a name="648"></a><a href="#648" id="line648">     648</a> </span>                :                                                                                                                                         
-<span class="lineNum" id="container649"><a name="649"></a><a href="#649" id="line649">     649</a> </span><span class="lineNoCov">              0 :         array_unshift($this-&gt;_ci_library_paths, $path);                                                                                 </span>
-<span class="lineNum" id="container650"><a name="650"></a><a href="#650" id="line650">     650</a> </span><span class="lineNoCov">              0 :         array_unshift($this-&gt;_ci_model_paths, $path);                                                                                   </span>
-<span class="lineNum" id="container651"><a name="651"></a><a href="#651" id="line651">     651</a> </span><span class="lineNoCov">              0 :         array_unshift($this-&gt;_ci_helper_paths, $path);                                                                                  </span>
+<span class="lineNum" id="container649"><a name="649"></a><a href="#649" id="line649">     649</a> </span><span class="lineCov">              1 :         array_unshift($this-&gt;_ci_library_paths, $path);                                                                                 </span>
+<span class="lineNum" id="container650"><a name="650"></a><a href="#650" id="line650">     650</a> </span><span class="lineCov">              1 :         array_unshift($this-&gt;_ci_model_paths, $path);                                                                                   </span>
+<span class="lineNum" id="container651"><a name="651"></a><a href="#651" id="line651">     651</a> </span><span class="lineCov">              1 :         array_unshift($this-&gt;_ci_helper_paths, $path);                                                                                  </span>
 <span class="lineNum" id="container652"><a name="652"></a><a href="#652" id="line652">     652</a> </span>                :                                                                                                                                         
-<span class="lineNum" id="container653"><a name="653"></a><a href="#653" id="line653">     653</a> </span><span class="lineNoCov">              0 :         $this-&gt;_ci_view_paths = array($path.'views/' =&gt; $view_cascade) + $this-&gt;_ci_view_paths;                                         </span>
+<span class="lineNum" id="container653"><a name="653"></a><a href="#653" id="line653">     653</a> </span><span class="lineCov">              1 :         $this-&gt;_ci_view_paths = array($path.'views/' =&gt; $view_cascade) + $this-&gt;_ci_view_paths;                                         </span>
 <span class="lineNum" id="container654"><a name="654"></a><a href="#654" id="line654">     654</a> </span>                :                                                                                                                                         
 <span class="lineNum" id="container655"><a name="655"></a><a href="#655" id="line655">     655</a> </span>                :         // Add config file path                                                                                                         
-<span class="lineNum" id="container656"><a name="656"></a><a href="#656" id="line656">     656</a> </span><span class="lineNoCov">              0 :         $config =&amp; $this-&gt;_ci_get_component('config');                                                                                  </span>
-<span class="lineNum" id="container657"><a name="657"></a><a href="#657" id="line657">     657</a> </span><span class="lineNoCov">              0 :         array_unshift($config-&gt;_config_paths, $path);                                                                                   </span>
-<span class="lineNum" id="container658"><a name="658"></a><a href="#658" id="line658">     658</a> </span><span class="lineNoCov">              0 :     }                                                                                                                                   </span>
+<span class="lineNum" id="container656"><a name="656"></a><a href="#656" id="line656">     656</a> </span><span class="lineCov">              1 :         $config =&amp; $this-&gt;_ci_get_component('config');                                                                                  </span>
+<span class="lineNum" id="container657"><a name="657"></a><a href="#657" id="line657">     657</a> </span><span class="lineCov">              1 :         array_unshift($config-&gt;_config_paths, $path);                                                                                   </span>
+<span class="lineNum" id="container658"><a name="658"></a><a href="#658" id="line658">     658</a> </span><span class="lineCov">              1 :     }                                                                                                                                   </span>
 <span class="lineNum" id="container659"><a name="659"></a><a href="#659" id="line659">     659</a> </span>                :                                                                                                                                         
 <span class="lineNum" id="container660"><a name="660"></a><a href="#660" id="line660">     660</a> </span>                :     // --------------------------------------------------------------------                                                             
 <span class="lineNum" id="container661"><a name="661"></a><a href="#661" id="line661">     661</a> </span>                :                                                                                                                                         
@@ -1886,7 +1886,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.1</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.8</a> and PHPUnit 3.6.10 at Wed Feb 8 23:46:06 EST 2012.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.1</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.8</a> and PHPUnit 3.6.10 at Tue Feb 14 9:54:46 EST 2012.</td></tr>
     </table>
 
     <br />
@@ -2198,6 +2198,46 @@
         },
         "panel419": {
           "header": "1 test covers line 419",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel647": {
+          "header": "1 test covers line 647",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel649": {
+          "header": "1 test covers line 649",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel650": {
+          "header": "1 test covers line 650",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel651": {
+          "header": "1 test covers line 651",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel653": {
+          "header": "1 test covers line 653",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel656": {
+          "header": "1 test covers line 656",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel657": {
+          "header": "1 test covers line 657",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel658": {
+          "header": "1 test covers line 658",
           "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
           "footer": ""
         },

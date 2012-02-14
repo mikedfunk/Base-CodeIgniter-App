@@ -76,7 +76,7 @@
             </div>
           </td>
           <td class="coverPerHi">100.00%</td>
-          <td class="coverNumHi">17 / 17</td>
+          <td class="coverNumHi">31 / 31</td>
         </tr>
 
         <tr>
@@ -95,14 +95,14 @@
           </td>
           <td class="coverPerHi">100.00%</td>
           <td class="coverNumHi">2 / 2</td>
-          <td class="crap">2</td>
+          <td class="crap">3</td>
           <td class="coverBar">
             <div class="coverBarOutline" title="100.00%">
                 <div class="size chameleon"  style="width:100%" title="100.00%"></div>
             </div>
           </td>
           <td class="coverPerHi">100.00%</td>
-          <td class="coverNumHi">16 / 16</td>
+          <td class="coverNumHi">30 / 30</td>
         </tr>
 
         <tr>
@@ -121,11 +121,11 @@
               </div>
           </td>
           <td class="coverPerHi">100.00%</td>
-          <td class="coverNumHi">9 / 9</td>
+          <td class="coverNumHi">10 / 10</td>
         </tr>
 
         <tr>
-          <td class="coverFile" colspan="4">&nbsp;<a href="#74">list_bookmarks()</a></td>
+          <td class="coverFile" colspan="4">&nbsp;<a href="#75">list_bookmarks()</a></td>
           <td class="coverBar">
             <div class="coverBarOutline" title="100.00%">
                 <div class="size chameleon"  style="width:100%" title="100.00%"></div>
@@ -133,14 +133,14 @@
           </td>
           <td class="coverPerHi">100.00%</td>
           <td class="coverNumHi">1 / 1</td>
-          <td class="crap">1</td>
+          <td class="crap">2</td>
           <td class="coverBar">
               <div class="coverBarOutline" title="100.00%">
                   <div class="size chameleon"  style="width:100%" title="100.00%"></div>
               </div>
           </td>
           <td class="coverPerHi">100.00%</td>
-          <td class="coverNumHi">7 / 7</td>
+          <td class="coverNumHi">19 / 19</td>
         </tr>
 
 
@@ -162,10 +162,10 @@
 <span class="lineNum" id="container4"><a name="4"></a><a href="#4" id="line4">       4</a> </span>                :  *                                                                                             
 <span class="lineNum" id="container5"><a name="5"></a><a href="#5" id="line5">       5</a> </span>                :  * Description                                                                                 
 <span class="lineNum" id="container6"><a name="6"></a><a href="#6" id="line6">       6</a> </span>                :  *                                                                                             
-<span class="lineNum" id="container7"><a name="7"></a><a href="#7" id="line7">       7</a> </span>                :  * @license        Copyright Mike Funk. All Rights Reserved.                            
-<span class="lineNum" id="container8"><a name="8"></a><a href="#8" id="line8">       8</a> </span>                :  * @author        Xulon Press                                                                  
-<span class="lineNum" id="container9"><a name="9"></a><a href="#9" id="line9">       9</a> </span>                :  * @link        http://xulonpress.com                                                          
-<span class="lineNum" id="container10"><a name="10"></a><a href="#10" id="line10">      10</a> </span>                :  * @email        info@xulonpress.com                                                           
+<span class="lineNum" id="container7"><a name="7"></a><a href="#7" id="line7">       7</a> </span>                :  * @license        Copyright Mike Funk. All Rights Reserved.                                   
+<span class="lineNum" id="container8"><a name="8"></a><a href="#8" id="line8">       8</a> </span>                :  * @author        Mike Funk                                                                    
+<span class="lineNum" id="container9"><a name="9"></a><a href="#9" id="line9">       9</a> </span>                :  * @link        http://mikefunk.com                                                            
+<span class="lineNum" id="container10"><a name="10"></a><a href="#10" id="line10">      10</a> </span>                :  * @email        mike@mikefunk.com                                                             
 <span class="lineNum" id="container11"><a name="11"></a><a href="#11" id="line11">      11</a> </span>                :  *                                                                                             
 <span class="lineNum" id="container12"><a name="12"></a><a href="#12" id="line12">      12</a> </span>                :  * @file        bookmarks.php                                                                  
 <span class="lineNum" id="container13"><a name="13"></a><a href="#13" id="line13">      13</a> </span>                :  * @version        1.0                                                                         
@@ -213,38 +213,52 @@
 <span class="lineNum" id="container55"><a name="55"></a><a href="#55" id="line55">      55</a> </span>                :                                                                                                
 <span class="lineNum" id="container56"><a name="56"></a><a href="#56" id="line56">      56</a> </span>                :         // load resources                                                                      
 <span class="lineNum" id="container57"><a name="57"></a><a href="#57" id="line57">      57</a> </span><span class="lineCov">              1 :         require_once($fcpath.$apppath.'libraries/less_css/lessc.inc.php');                     </span>
-<span class="lineNum" id="container58"><a name="58"></a><a href="#58" id="line58">      58</a> </span><span class="lineCov">              1 :         $this-&gt;load-&gt;library('carabiner');                                                     </span>
-<span class="lineNum" id="container59"><a name="59"></a><a href="#59" id="line59">      59</a> </span><span class="lineCov">              1 :         $this-&gt;config-&gt;load('carabiner', TRUE);                                                </span>
-<span class="lineNum" id="container60"><a name="60"></a><a href="#60" id="line60">      60</a> </span>                :                                                                                                
-<span class="lineNum" id="container61"><a name="61"></a><a href="#61" id="line61">      61</a> </span>                :         // set style and script dirs                                                           
-<span class="lineNum" id="container62"><a name="62"></a><a href="#62" id="line62">      62</a> </span><span class="lineCov">              1 :         $this-&gt;_data['style_dir'] = $fcpath . $this-&gt;config-&gt;item('style_dir', 'carabiner');   </span>
-<span class="lineNum" id="container63"><a name="63"></a><a href="#63" id="line63">      63</a> </span><span class="lineCov">              1 :         $this-&gt;_data['script_dir'] = $fcpath . $this-&gt;config-&gt;item('script_dir', 'carabiner'); </span>
-<span class="lineNum" id="container64"><a name="64"></a><a href="#64" id="line64">      64</a> </span><span class="lineCov">              1 :     }                                                                                          </span>
-<span class="lineNum" id="container65"><a name="65"></a><a href="#65" id="line65">      65</a> </span>                :                                                                                                
-<span class="lineNum" id="container66"><a name="66"></a><a href="#66" id="line66">      66</a> </span>                :     // --------------------------------------------------------------------------              
-<span class="lineNum" id="container67"><a name="67"></a><a href="#67" id="line67">      67</a> </span>                :                                                                                                
-<span class="lineNum" id="container68"><a name="68"></a><a href="#68" id="line68">      68</a> </span>                :     /**                                                                                        
-<span class="lineNum" id="container69"><a name="69"></a><a href="#69" id="line69">      69</a> </span>                :      * list_bookmarks function.                                                                
-<span class="lineNum" id="container70"><a name="70"></a><a href="#70" id="line70">      70</a> </span>                :      *                                                                                         
-<span class="lineNum" id="container71"><a name="71"></a><a href="#71" id="line71">      71</a> </span>                :      * @access public                                                                          
-<span class="lineNum" id="container72"><a name="72"></a><a href="#72" id="line72">      72</a> </span>                :      * @return void                                                                            
-<span class="lineNum" id="container73"><a name="73"></a><a href="#73" id="line73">      73</a> </span>                :      */                                                                                        
-<span class="lineNum" id="container74"><a name="74"></a><a href="#74" id="line74">      74</a> </span>                :     public function list_bookmarks()                                                           
-<span class="lineNum" id="container75"><a name="75"></a><a href="#75" id="line75">      75</a> </span>                :     {                                                                                          
-<span class="lineNum" id="container76"><a name="76"></a><a href="#76" id="line76">      76</a> </span>                :         // get bookmarks                                                                       
+<span class="lineNum" id="container58"><a name="58"></a><a href="#58" id="line58">      58</a> </span><span class="lineCov">              1 :         $this-&gt;load-&gt;add_package_path($fcpath.$apppath.'third_party/carabiner');               </span>
+<span class="lineNum" id="container59"><a name="59"></a><a href="#59" id="line59">      59</a> </span><span class="lineCov">              1 :         $this-&gt;load-&gt;library('carabiner');                                                     </span>
+<span class="lineNum" id="container60"><a name="60"></a><a href="#60" id="line60">      60</a> </span><span class="lineCov">              1 :         $this-&gt;config-&gt;load('carabiner', TRUE);                                                </span>
+<span class="lineNum" id="container61"><a name="61"></a><a href="#61" id="line61">      61</a> </span>                :                                                                                                
+<span class="lineNum" id="container62"><a name="62"></a><a href="#62" id="line62">      62</a> </span>                :         // set style and script dirs                                                           
+<span class="lineNum" id="container63"><a name="63"></a><a href="#63" id="line63">      63</a> </span><span class="lineCov">              1 :         $this-&gt;_data['style_dir'] = $fcpath . $this-&gt;config-&gt;item('style_dir', 'carabiner');   </span>
+<span class="lineNum" id="container64"><a name="64"></a><a href="#64" id="line64">      64</a> </span><span class="lineCov">              1 :         $this-&gt;_data['script_dir'] = $fcpath . $this-&gt;config-&gt;item('script_dir', 'carabiner'); </span>
+<span class="lineNum" id="container65"><a name="65"></a><a href="#65" id="line65">      65</a> </span><span class="lineCov">              1 :     }                                                                                          </span>
+<span class="lineNum" id="container66"><a name="66"></a><a href="#66" id="line66">      66</a> </span>                :                                                                                                
+<span class="lineNum" id="container67"><a name="67"></a><a href="#67" id="line67">      67</a> </span>                :     // --------------------------------------------------------------------------              
+<span class="lineNum" id="container68"><a name="68"></a><a href="#68" id="line68">      68</a> </span>                :                                                                                                
+<span class="lineNum" id="container69"><a name="69"></a><a href="#69" id="line69">      69</a> </span>                :     /**                                                                                        
+<span class="lineNum" id="container70"><a name="70"></a><a href="#70" id="line70">      70</a> </span><span class="lineCov">              1 :      * list_bookmarks function.                                                                </span>
+<span class="lineNum" id="container71"><a name="71"></a><a href="#71" id="line71">      71</a> </span>                :      *                                                                                         
+<span class="lineNum" id="container72"><a name="72"></a><a href="#72" id="line72">      72</a> </span>                :      * @access public                                                                          
+<span class="lineNum" id="container73"><a name="73"></a><a href="#73" id="line73">      73</a> </span>                :      * @return void                                                                            
+<span class="lineNum" id="container74"><a name="74"></a><a href="#74" id="line74">      74</a> </span>                :      */                                                                                        
+<span class="lineNum" id="container75"><a name="75"></a><a href="#75" id="line75">      75</a> </span>                :     public function list_bookmarks()                                                           
+<span class="lineNum" id="container76"><a name="76"></a><a href="#76" id="line76">      76</a> </span><span class="lineCov">              1 :     {                                                                                          </span>
 <span class="lineNum" id="container77"><a name="77"></a><a href="#77" id="line77">      77</a> </span><span class="lineCov">              1 :         $this-&gt;load-&gt;database();                                                               </span>
 <span class="lineNum" id="container78"><a name="78"></a><a href="#78" id="line78">      78</a> </span><span class="lineCov">              1 :         $this-&gt;load-&gt;model('bookmarks_model');                                                 </span>
-<span class="lineNum" id="container79"><a name="79"></a><a href="#79" id="line79">      79</a> </span><span class="lineCov">              1 :         $this-&gt;_data['bookmarks'] = $this-&gt;bookmarks_model-&gt;bookmarks_table();                 </span>
-<span class="lineNum" id="container80"><a name="80"></a><a href="#80" id="line80">      80</a> </span>                :                                                                                                
-<span class="lineNum" id="container81"><a name="81"></a><a href="#81" id="line81">      81</a> </span>                :         // load view                                                                           
-<span class="lineNum" id="container82"><a name="82"></a><a href="#82" id="line82">      82</a> </span><span class="lineCov">              1 :         $this-&gt;_data['header'] = $this-&gt;load-&gt;view('header_only_view', $this-&gt;_data, TRUE);    </span>
-<span class="lineNum" id="container83"><a name="83"></a><a href="#83" id="line83">      83</a> </span><span class="lineCov">              1 :         $this-&gt;_data['content'] = $this-&gt;load-&gt;view('list_bookmarks_view', $this-&gt;_data, TRUE);</span>
-<span class="lineNum" id="container84"><a name="84"></a><a href="#84" id="line84">      84</a> </span><span class="lineCov">              1 :         $this-&gt;load-&gt;view('template_view', $this-&gt;_data);                                      </span>
-<span class="lineNum" id="container85"><a name="85"></a><a href="#85" id="line85">      85</a> </span><span class="lineCov">              1 :     }                                                                                          </span>
-<span class="lineNum" id="container86"><a name="86"></a><a href="#86" id="line86">      86</a> </span>                :                                                                                                
-<span class="lineNum" id="container87"><a name="87"></a><a href="#87" id="line87">      87</a> </span>                :     // --------------------------------------------------------------------------              
-<span class="lineNum" id="container88"><a name="88"></a><a href="#88" id="line88">      88</a> </span>                : }                                                                                              
-<span class="lineNum" id="container89"><a name="89"></a><a href="#89" id="line89">      89</a> </span>                : /* End of file bookmarks.php */                                                                
+<span class="lineNum" id="container79"><a name="79"></a><a href="#79" id="line79">      79</a> </span><span class="lineCov">              1 :                                                                                                </span>
+<span class="lineNum" id="container80"><a name="80"></a><a href="#80" id="line80">      80</a> </span>                :         // pagination                                                                          
+<span class="lineNum" id="container81"><a name="81"></a><a href="#81" id="line81">      81</a> </span><span class="lineCov">              1 :         $this-&gt;load-&gt;library('pagination');                                                    </span>
+<span class="lineNum" id="container82"><a name="82"></a><a href="#82" id="line82">      82</a> </span><span class="lineCov">              1 :         $this-&gt;config-&gt;load('pagination');                                                     </span>
+<span class="lineNum" id="container83"><a name="83"></a><a href="#83" id="line83">      83</a> </span><span class="lineCov">              1 :         $opts = $this-&gt;input-&gt;get();                                                           </span>
+<span class="lineNum" id="container84"><a name="84"></a><a href="#84" id="line84">      84</a> </span><span class="lineCov">              1 :         unset($opts['page']);                                                                  </span>
+<span class="lineNum" id="container85"><a name="85"></a><a href="#85" id="line85">      85</a> </span><span class="lineCov">              1 :         $q = $this-&gt;bookmarks_model-&gt;bookmarks_table($opts);                                   </span>
+<span class="lineNum" id="container86"><a name="86"></a><a href="#86" id="line86">      86</a> </span><span class="lineCov">              1 :         $config['base_url'] = 'list_bookmarks?';                                               </span>
+<span class="lineNum" id="container87"><a name="87"></a><a href="#87" id="line87">      87</a> </span><span class="lineCov">              1 :         $config['total_rows'] = $this-&gt;data['total_rows'] = $q-&gt;num_rows();                    </span>
+<span class="lineNum" id="container88"><a name="88"></a><a href="#88" id="line88">      88</a> </span><span class="lineCov">              1 :         $this-&gt;pagination-&gt;initialize($config);                                                </span>
+<span class="lineNum" id="container89"><a name="89"></a><a href="#89" id="line89">      89</a> </span>                :                                                                                                
+<span class="lineNum" id="container90"><a name="90"></a><a href="#90" id="line90">      90</a> </span>                :         // get bookmarks                                                                       
+<span class="lineNum" id="container91"><a name="91"></a><a href="#91" id="line91">      91</a> </span><span class="lineCov">              1 :         $get = (is_array($this-&gt;input-&gt;get()) ? $this-&gt;input-&gt;get() : array());                </span>
+<span class="lineNum" id="container92"><a name="92"></a><a href="#92" id="line92">      92</a> </span><span class="lineCov">              1 :         $opts = array_merge($get, array('limit' =&gt; $this-&gt;config-&gt;item('per_page')));          </span>
+<span class="lineNum" id="container93"><a name="93"></a><a href="#93" id="line93">      93</a> </span><span class="lineCov">              1 :         $this-&gt;_data['bookmarks'] = $this-&gt;bookmarks_model-&gt;bookmarks_table($opts);            </span>
+<span class="lineNum" id="container94"><a name="94"></a><a href="#94" id="line94">      94</a> </span>                :                                                                                                
+<span class="lineNum" id="container95"><a name="95"></a><a href="#95" id="line95">      95</a> </span>                :         // load view                                                                           
+<span class="lineNum" id="container96"><a name="96"></a><a href="#96" id="line96">      96</a> </span><span class="lineCov">              1 :         $this-&gt;_data['header'] = $this-&gt;load-&gt;view('header_only_view', $this-&gt;_data, TRUE);    </span>
+<span class="lineNum" id="container97"><a name="97"></a><a href="#97" id="line97">      97</a> </span><span class="lineCov">              1 :         $this-&gt;_data['content'] = $this-&gt;load-&gt;view('list_bookmarks_view', $this-&gt;_data, TRUE);</span>
+<span class="lineNum" id="container98"><a name="98"></a><a href="#98" id="line98">      98</a> </span><span class="lineCov">              1 :         $this-&gt;load-&gt;view('template_view', $this-&gt;_data);                                      </span>
+<span class="lineNum" id="container99"><a name="99"></a><a href="#99" id="line99">      99</a> </span><span class="lineCov">              1 :     }                                                                                          </span>
+<span class="lineNum" id="container100"><a name="100"></a><a href="#100" id="line100">     100</a> </span>                :                                                                                                
+<span class="lineNum" id="container101"><a name="101"></a><a href="#101" id="line101">     101</a> </span>                :     // --------------------------------------------------------------------------              
+<span class="lineNum" id="container102"><a name="102"></a><a href="#102" id="line102">     102</a> </span>                : }                                                                                              
+<span class="lineNum" id="container103"><a name="103"></a><a href="#103" id="line103">     103</a> </span>                : /* End of file bookmarks.php */                                                                
 
 </pre>
         </td>
@@ -253,7 +267,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.1</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.8</a> and PHPUnit 3.6.10 at Wed Feb 8 23:46:06 EST 2012.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.1.1</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.8</a> and PHPUnit 3.6.10 at Tue Feb 14 9:54:46 EST 2012.</td></tr>
     </table>
 
     <br />
@@ -298,8 +312,8 @@
           "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
           "footer": ""
         },
-        "panel62": {
-          "header": "1 test covers line 62",
+        "panel60": {
+          "header": "1 test covers line 60",
           "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
           "footer": ""
         },
@@ -310,6 +324,21 @@
         },
         "panel64": {
           "header": "1 test covers line 64",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel65": {
+          "header": "1 test covers line 65",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel70": {
+          "header": "1 test covers line 70",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel76": {
+          "header": "1 test covers line 76",
           "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
           "footer": ""
         },
@@ -325,6 +354,11 @@
         },
         "panel79": {
           "header": "1 test covers line 79",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel81": {
+          "header": "1 test covers line 81",
           "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
           "footer": ""
         },
@@ -345,6 +379,56 @@
         },
         "panel85": {
           "header": "1 test covers line 85",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel86": {
+          "header": "1 test covers line 86",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel87": {
+          "header": "1 test covers line 87",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel88": {
+          "header": "1 test covers line 88",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel91": {
+          "header": "1 test covers line 91",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel92": {
+          "header": "1 test covers line 92",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel93": {
+          "header": "1 test covers line 93",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel96": {
+          "header": "1 test covers line 96",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel97": {
+          "header": "1 test covers line 97",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel98": {
+          "header": "1 test covers line 98",
+          "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
+          "footer": ""
+        },
+        "panel99": {
+          "header": "1 test covers line 99",
           "body": "<ul><li class=\"testPassed\">bookmarks_Test::test_list_bookmarks</li></ul>",
           "footer": ""
         },

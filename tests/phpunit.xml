@@ -6,14 +6,12 @@
     bootstrap="../application/third_party/CIUnit/bootstrap_phpunit.php">
     <filter>
         <blacklist>
-            <directory>../codeigniter</directory>
+            <directory>../../codeigniter</directory>
             <directory>../application/config</directory>
             <directory>../application/core</directory>
             <directory>../application/libraries/less_css</directory>
             <directory>../application/third_party/CIUnit</directory>
-            <file>../application/libraries/Carabiner.php</file>
-            <file>../application/libraries/Cssmin.php</file>
-            <file>../application/libraries/Jsmin.php</file>
+            <directory>../application/third_party/Carabiner</directory>
         </blacklist>
     </filter>
     <php>
