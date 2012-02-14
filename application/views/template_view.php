@@ -17,7 +17,10 @@ $this->carabiner->css('cache/bootstrap.css');
 lessc::ccompile($style_dir.'styles/styles.less', $style_dir.'cache/styles.css');
 $this->carabiner->css('cache/styles.css');
 
-$this->carabiner->js('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+// remote jquery
+// $this->carabiner->js('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+// local jquery
+$this->carabiner->js('scripts/jquery-1.7.min.js');
 $this->carabiner->js('scripts/actions.js');
 $this->carabiner->js('scripts/scripts.js');
 $this->carabiner->display();
