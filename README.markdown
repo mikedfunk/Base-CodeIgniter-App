@@ -14,6 +14,7 @@ Includes the following submodules:
 * [Carabiner](https://github.com/mikedfunk/carabiner) - drop-in to third_party version of Carabiner - an asset management library.
 
 Additional tweaks:
+------------------------------
 
 * Welcome page is re-done with:
  * twitter bootstrap
@@ -21,3 +22,10 @@ Additional tweaks:
  * minified and combined JS and CSS through Carabiner
  * simple template setup
 * htaccess from [html5boilerplate](http://html5boilerplate.com) with codeigniter snippet at the top to remove index.php.
+
+Permissions:
+------------------------------
+
+* ```assets/cache``` needs to be writable
+* ```application/db_cache``` needs to be writable for database query caching to work
+* ```application/cache``` needs to be writable for page caching to work
