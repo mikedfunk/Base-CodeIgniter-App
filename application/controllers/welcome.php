@@ -1,52 +1,85 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.1.6 or newer
- *
- * NOTICE OF LICENSE
+ * welcome
  * 
- * Licensed under the Academic Free License version 3.0
+ * Description
  * 
- * This source file is subject to the Academic Free License (AFL 3.0) that is
- * bundled with this package in the files license_afl.txt / license_afl.rst.
- * It is also available through the world wide web at this URL:
- * http://opensource.org/licenses/AFL-3.0
- * If you did not receive a copy of the license and are unable to obtain it
- * through the world wide web, please send an email to
- * licensing@ellislab.com so we can send you a copy immediately.
- *
- * @package		CodeIgniter
- * @author		EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2012, EllisLab, Inc. (http://ellislab.com/)
- * @license		http://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
- * @link		http://codeigniter.com
- * @since		Version 1.0
- * @filesource
+ * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
+ * @author		Mike Funk
+ * @link		http://mikefunk.com
+ * @email		mike@mikefunk.com
+ * 
+ * @file		welcome.php
+ * @version		1.0
+ * @date		02/08/2012
+ * 
+ * Copyright (c) 2012
  */
 
-class Welcome extends CI_Controller {
+// --------------------------------------------------------------------------
 
+/**
+ * welcome class.
+ * 
+ * @extends CI_Controller
+ */
+class welcome extends CI_Controller
+{
+	// --------------------------------------------------------------------------
+	
 	/**
-	 * Index Page for this controller.
+	 * _data
 	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 * holds all data for views
+	 * 
+	 * @var mixed
+	 * @access private
+	 */
+	private $_data;
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * __construct function.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		
+		// for testing to work
+		$fcpath = str_replace('application/third_party/CIUnit/', '', FCPATH);
+		$apppath = str_replace($fcpath, '', APPPATH);
+		
+		// load resources
+		require_once($fcpath.$apppath.'libraries/less_css/lessc.inc.php');
+		$this->load->add_package_path($fcpath.$apppath.'third_party/carabiner');
+		$this->load->library('carabiner');
+// 		$this->config->load('carabiner', TRUE);
+// 		
+// 		// set style and script dirs
+// 		$this->_data['style_dir'] = $fcpath . $this->config->item('style_dir', 'carabiner');
+// 		$this->_data['script_dir'] = $fcpath . $this->config->item('script_dir', 'carabiner');
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * index function.
+	 * 
+	 * @access public
+	 * @return void
 	 */
 	public function index()
-	{
-		$this->load->view('welcome_message');
+	{	
+		// load view
+		$this->_data['content'] = $this->load->view('test_view', $this->_data, TRUE);
+		$this->load->view('template_view', $this->_data);
 	}
+	
+	// --------------------------------------------------------------------------
 }
-
 /* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* Location: ./base_codeigniter_app/application/controllers/welcome.php */

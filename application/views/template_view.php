@@ -2,19 +2,19 @@
 <html lang="en" class="">
   <head>
     <meta charset="utf-8">
-    <title>Bookymark! Save your bookmarks</title>
-    <meta name="description" content="Xulon Press' internal book publishing system.">
-    <meta name="author" content="Xulon Press">
+    <title>[title]</title>
+    <meta name="description" content="[description]">
+    <meta name="author" content="[author]">
     
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <?php
 // assets
-lessc::ccompile($style_dir.'twitter_bootstrap/less/bootstrap.less', $style_dir.'cache/bootstrap.css');
+lessc::ccompile($this->carabiner->style_dir.'twitter_bootstrap/less/bootstrap.less', $this->carabiner->style_dir.'cache/bootstrap.css');
 $this->carabiner->css('cache/bootstrap.css');
 
-lessc::ccompile($style_dir.'styles/styles.less', $style_dir.'cache/styles.css');
+lessc::ccompile($this->carabiner->style_dir.'styles/styles.less', $this->carabiner->style_dir.'cache/styles.css');
 $this->carabiner->css('cache/styles.css');
 
 // remote jquery
@@ -42,15 +42,28 @@ $this->carabiner->display();
 */ ?>
   </head>
   <body>
-  <?=$header?>
+<?php /*
+  <div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="#/admin/home">Welcome</a>
+        </div><!--container-->
+        </div><!--fill-->
+        </div><!--navbar-inner-->
+</div><!--navbar-->
+*/ ?>
   <?=$content?>
   <footer>
 <div class="footer">
 <hr />
 <div class="container">
-<p>&copy;2012 Mike Funk. All Rights Reserved.</p>
+<p>&copy;<?=date('Y')?> [copyright holder]. All Rights Reserved.</p>
 </div><!--container-->
 </div><!--footer-->
 </footer>
   </body>
 </html>
+<?php
+/* End of file template_view.php */
+/* Location: ./base_codeigniter_app/application/views/template_view.php */
