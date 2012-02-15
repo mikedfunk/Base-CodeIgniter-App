@@ -12,3 +12,12 @@ Includes the following submodules:
 * [JQuery Mockjax](https://github.com/appendto/jquery-mockjax) - excellent tool for mocking ajax requests for JS unit testing.
 * [LessPHP](https://github.com/leafo/lessphp) - php LessCSS interpreter.
 * [Carabiner](https://github.com/mikedfunk/carabiner) - drop-in to third_party version of Carabiner - an asset management library.
+
+Additional tweaks:
+
+* Welcome page is re-done with:
+ * twitter bootstrap
+ * less css
+ * minified and combined JS and CSS through Carabiner
+ * simple template setup
+* htaccess from [html5boilerplate](http://html5boilerplate.com) with codeigniter snippet at the top to remove index.php.
