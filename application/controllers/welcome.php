@@ -70,6 +70,8 @@ class welcome extends CI_Controller
 	public function index()
 	{	
 		// load view
+		$this->_data['title'] = 'Welcome to CodeIgniter!';
+		$this->_data['description'] = 'CodeIgniter welcome page';
 		$this->_data['content'] = $this->load->view('welcome_message', $this->_data, TRUE);
 		$this->load->view('template_view', $this->_data);
 	}

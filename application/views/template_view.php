@@ -2,9 +2,9 @@
 <html lang="en" class="">
   <head>
     <meta charset="utf-8">
-    <title>[title]</title>
-    <meta name="description" content="[description]">
-    <meta name="author" content="[author]">
+    <title><?=(isset($title)?$title:'')?></title>
+    <meta name="description" content="<?=(isset($title)?$title:'')?>">
+    <meta name="author" content="<?=(isset($author)?$author:'')?>">
     
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -54,6 +54,7 @@ $this->carabiner->display();
 </div><!--navbar-->
 */ ?>
   <?=$content?>
+<?php /*
   <footer>
 <div class="footer">
 <hr />
@@ -62,6 +63,7 @@ $this->carabiner->display();
 </div><!--container-->
 </div><!--footer-->
 </footer>
+*/ ?>
   </body>
 </html>
 <?php
