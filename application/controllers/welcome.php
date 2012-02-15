@@ -70,7 +70,7 @@ class welcome extends CI_Controller
 	public function index()
 	{	
 		// load view
-		$this->_data['content'] = $this->load->view('test_view', $this->_data, TRUE);
+		$this->_data['content'] = $this->load->view('welcome_message', $this->_data, TRUE);
 		$this->load->view('template_view', $this->_data);
 	}
 	
