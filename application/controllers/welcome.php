@@ -50,8 +50,8 @@ class welcome extends CI_Controller
 		parent::__construct();
 		
 		// for testing to work
-		$fcpath = str_replace('application/third_party/CIUnit/', '', FCPATH);
-		$apppath = str_replace($fcpath, '', APPPATH);
+		$this->_data['fcpath'] = $fcpath = str_replace('application/third_party/CIUnit/', '', FCPATH);
+		$this->_data['apppath'] = $apppath = str_replace($fcpath, '', APPPATH);
 		
 		// load resources
 		require_once($fcpath.$apppath.'libraries/less_css/lessc.inc.php');

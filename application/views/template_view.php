@@ -11,10 +11,10 @@
 
 <?php
 // assets
-lessc::ccompile($this->carabiner->style_dir.'twitter_bootstrap/less/bootstrap.less', $this->carabiner->style_dir.'cache/bootstrap.css');
+lessc::ccompile($fcpath.$this->carabiner->style_dir.'twitter_bootstrap/less/bootstrap.less', $this->carabiner->style_dir.'cache/bootstrap.css');
 $this->carabiner->css('cache/bootstrap.css');
 
-lessc::ccompile($this->carabiner->style_dir.'styles/styles.less', $this->carabiner->style_dir.'cache/styles.css');
+lessc::ccompile($fcpath.$this->carabiner->style_dir.'styles/styles.less', $this->carabiner->style_dir.'cache/styles.css');
 $this->carabiner->css('cache/styles.css');
 
 // remote jquery
