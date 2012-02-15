@@ -76,8 +76,8 @@ $active_record = TRUE;
 
 $db['local']['hostname'] = '127.0.0.1';
 $db['local']['username'] = 'root';
-$db['local']['password'] = 'Pass7155';
-$db['local']['database'] = 'mikedfunk_db';
+$db['local']['password'] = '';
+$db['local']['database'] = 'db_name';
 $db['local']['dbdriver'] = 'mysql';
 $db['local']['dbprefix'] = '';
 $db['local']['pconnect'] = TRUE;
@@ -90,10 +90,10 @@ $db['local']['swap_pre'] = '';
 $db['local']['autoinit'] = TRUE;
 $db['local']['stricton'] = FALSE;
 
-$db['remote']['hostname'] = 'tunnel.pagodabox.com:3306';
-$db['remote']['username'] = 'carmina';
-$db['remote']['password'] = 'eTGWOfAE';
-$db['remote']['database'] = 'mikedfunk_db';
+$db['remote']['hostname'] = 'hostname';
+$db['remote']['username'] = 'username';
+$db['remote']['password'] = 'pass';
+$db['remote']['database'] = 'db_name';
 $db['remote']['dbdriver'] = 'mysql';
 $db['remote']['dbprefix'] = '';
 $db['remote']['pconnect'] = TRUE;
