@@ -1,9 +1,9 @@
 /**
  * scripts.js
  * 
- * Description
+ * Put functions here.
  * 
- * @license		Copyright Mike Funk. All Rights Reserved.
+ * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @author		Mike Funk
  * @link		http://mikefunk.com
  * @email		mike@mikefunk.com
@@ -19,4 +19,4 @@
 
 
 /* End of file scripts.js */
-/* Location: ./bookymark/assets/scripts/scripts.js */
+/* Location: ./base_codeigniter_app/assets/scripts/scripts.js */

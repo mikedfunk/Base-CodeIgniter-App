@@ -1,9 +1,9 @@
 /**
  * actions.js
  * 
- * Description
+ * Put listeners here, then call functions from scripts.js with them.
  * 
- * @license		Copyright Mike Funk. All Rights Reserved.
+ * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @author		Mike Funk
  * @link		http://mikefunk.com
  * @email		mike@mikefunk.com
@@ -26,4 +26,4 @@ $(function()
 });
 
 /* End of file actions.js */
-/* Location: ./bookymark/assets/scripts/actions.js */
+/* Location: ./base_codeigniter_app/assets/scripts/actions.js */

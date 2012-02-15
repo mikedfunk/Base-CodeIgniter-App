@@ -1,9 +1,9 @@
 /**
  * test_scripts
  * 
- * Description
+ * runs tests on your JS.
  * 
- * @license		Copyright Mike Funk. All Rights Reserved.
+ * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @author		Mike Funk
  * @link		http://mikefunk.com
  * @email		mike@mikefunk.com
@@ -96,4 +96,4 @@ $(function()
 	
 });
 /* End of file test_scripts.js */
-/* Location: ./xulonpress_website/ci_pages/tests/assets/scripts/test_scripts.js */
+/* Location: ./base_codeigniter_app/tests/assets/scripts/test_scripts.js */
