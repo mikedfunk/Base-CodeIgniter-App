@@ -11,11 +11,8 @@
 
 <?php
 // assets
-lessc::ccompile($fcpath.$this->carabiner->style_dir.'twitter_bootstrap/less/bootstrap.less', $this->carabiner->style_dir.'cache/bootstrap.css');
-$this->carabiner->css('cache/bootstrap.css');
-
-lessc::ccompile($fcpath.$this->carabiner->style_dir.'styles/styles.less', $this->carabiner->style_dir.'cache/styles.css');
-$this->carabiner->css('cache/styles.css');
+$this->carabiner->css('twitter_bootstrap/less/bootstrap.less');
+$this->carabiner->css('styles/styles.less');
 
 // remote jquery
 // $this->carabiner->js('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
@@ -33,13 +30,14 @@ $this->carabiner->display();
 
 	<!--[if IE]><![endif]-->
 	
-    <!-- fav and touch icons -->
-<?php /*
+<?php /* it would be a good idea to add these...
+	<!-- fav and touch icons -->
     <link rel="shortcut icon" href="<?=base_url()?>assets/images/favicon.ico">
     <link rel="apple-touch-icon" href="<?=base_url()?>assets/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="<?=base_url()?>assets/images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="<?=base_url()?>assets/images/apple-touch-icon-114x114.png">
 */ ?>
+
   </head>
   <body>
 <?php /*

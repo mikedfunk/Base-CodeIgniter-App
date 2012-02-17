@@ -73,6 +73,13 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 */
 define('SHOW_DEBUG_BACKTRACE', TRUE);
 
+// --------------------------------------------------------------------------
+// FCPATH and APPPATH that work with CIUnit
+// --------------------------------------------------------------------------
+
+define('FCPATH_U', str_replace('application/third_party/CIUnit/', '', FCPATH));
+define('APPPATH_U', str_replace(FCPATH_U, '', APPPATH));
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
