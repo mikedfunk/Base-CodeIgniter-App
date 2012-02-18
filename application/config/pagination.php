@@ -4,10 +4,10 @@
  * 
  * Description
  * 
- * @license		Copyright Xulon Press, Inc. All Rights Reserved.
- * @author		Xulon Press
- * @link		http://codeigniter.com/user_guide/libraries/pagination.html
- * @email		info@xulonpress.com
+ * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
+ * @author		Mike Funk
+ * @link		http://mikefunk.com
+ * @email		mike@mikefunk.com
  * 
  * @file		pagination.php
  * @version		1.0

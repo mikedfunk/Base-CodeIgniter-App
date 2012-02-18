@@ -4,10 +4,10 @@
  * 
  * since I can't load a controller here, I'll just do _VC inside this file.
  * 
- * @license		Copyright Xulon Press, Inc. All Rights Reserved.
- * @author		Xulon Press
- * @link		http://xulonpress.com
- * @email		info@xulonpress.com
+ * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
+ * @author		Mike Funk
+ * @link		http://mikefunk.com
+ * @email		mike@mikefunk.com
  * 
  * @file		error_404.php
  * @version		1.0
