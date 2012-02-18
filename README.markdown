@@ -21,6 +21,7 @@ Additional tweaks:
  * less css
  * minified and combined JS and CSS through Carabiner
  * simple template setup
+* global form_validation delimiters for twitter bootstrap set in ```libraries/MY_Form_validation.php```
 * htaccess from [html5boilerplate](http://html5boilerplate.com) with codeigniter snippet at the top to remove index.php.
 
 Permissions:
