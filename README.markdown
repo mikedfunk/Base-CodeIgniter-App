@@ -10,8 +10,8 @@ Includes the following submodules:
 * [Kenji's CIUnit](https://bitbucket.org/kenjis/my-ciunit) - a fork of CIUnit (PHPUnit support for CodeIgniter applications) that works in CodeIgniter 2. This is on bitbucket in mercurial so I couldn't add it as a submodule unfortunately. The way it is set up it spreads all over the application folder anyway so it's not just a drop-in tool. For sample tests clone his repo. The version included is from January 28, 2012.
 * [QUnit](https://github.com/jquery/qunit) - for JS unit testing.
 * [JQuery Mockjax](https://github.com/appendto/jquery-mockjax) - excellent tool for mocking ajax requests for JS unit testing.
-* [LessPHP](https://github.com/leafo/lessphp) - php LessCSS interpreter.
-* [Carabiner](https://github.com/mikedfunk/carabiner) - drop-in to third_party version of Carabiner - an asset management library.
+* [Carabiner](https://github.com/mikedfunk/carabiner) - drop-in to third_party version of Carabiner - an asset management library. (with added [LessPHP](https://github.com/leafo/lessphp) support)
+* [CI Authentication](https://github.com/mikedfunk/CI-Authentication) - An authentication package for CodeIgniter.
 
 Additional tweaks:
 ------------------------------
