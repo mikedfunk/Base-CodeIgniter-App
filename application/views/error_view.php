@@ -2,7 +2,7 @@
 /**
  * error_view
  * 
- * Description
+ * The inner error view called from the errors/error_404.php template.
  * 
  * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @author		Mike Funk

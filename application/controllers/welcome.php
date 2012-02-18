@@ -2,7 +2,7 @@
 /**
  * welcome
  * 
- * Description
+ * The default welcome page redone with carabiner and twitter bootstrap.
  * 
  * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @author		Mike Funk
@@ -48,23 +48,24 @@ class welcome extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		
-		// load resources
-		$this->load->add_package_path(FCPATH_U . APPPATH_U . 'third_party/carabiner');
-		$this->load->library('carabiner');
 	}
 	
 	// --------------------------------------------------------------------------
 	
 	/**
 	 * index function.
+	 *
+	 * the welcome page.
 	 * 
 	 * @access public
 	 * @return void
 	 */
 	public function index()
 	{	
-		// load view
+		// load resources
+		$this->load->library('carabiner');
+		
+		// load view with data
 		$this->_data['title'] = 'Welcome to CodeIgniter!';
 		$this->_data['description'] = 'CodeIgniter welcome page';
 		$this->_data['content'] = $this->load->view('welcome_message', $this->_data, TRUE);

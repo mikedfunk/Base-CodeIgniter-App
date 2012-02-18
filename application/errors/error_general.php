@@ -2,7 +2,7 @@
 /**
  * error_404
  * 
- * since I can't load a controller here, I'll just do _VC inside this file.
+ * since I can't load a controller here, I'll just let this act like a controller.
  * 
  * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @author		Mike Funk
