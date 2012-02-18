@@ -14,3 +14,6 @@
 [submodule "tests/assets/scripts/qunit"]
 	path = tests/assets/scripts/qunit
 	url = git://github.com/jquery/qunit.git
+[submodule "application/third_party/authentication"]
+	path = application/third_party/authentication
+	url = git://github.com/mikedfunk/CI-Authentication.git
