@@ -43,7 +43,7 @@
  * NOTE: If you change these, also change the error_reporting() code below
  */
 // 	define('ENVIRONMENT', 'development');
-if ($_SERVER['HTTP_HOST'] == 'localhost')
+if (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false)
 {
 	define('ENVIRONMENT', 'development');
 }
