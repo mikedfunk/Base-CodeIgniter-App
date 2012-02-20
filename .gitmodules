@@ -13,3 +13,6 @@
 [submodule "application/third_party/authentication"]
 	path = application/third_party/authentication
 	url = git://github.com/mikedfunk/CI-Authentication.git
+[submodule "codeigniter"]
+	path = codeigniter
+	url = git://github.com/EllisLab/CodeIgniter.git
