@@ -1,7 +1,3 @@
-
-[submodule "codeigniter"]
-	path = codeigniter
-	url = git://github.com/EllisLab/CodeIgniter.git
 [submodule "tests/assets/scripts/jquery-mockjax"]
 	path = tests/assets/scripts/jquery-mockjax
 	url = git://github.com/appendto/jquery-mockjax.git
