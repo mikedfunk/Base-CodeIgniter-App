@@ -17,6 +17,16 @@
 
 // --------------------------------------------------------------------------
 
+/**
+ * @link http://www.arlocarreon.com/blog/javascript/how-to-debug-javascript/
+ */
+var console = console || {
+     log:function(){},
+     warn:function(){},
+     error:function(){}
+};
+
+// --------------------------------------------------------------------------
 
 /* End of file scripts.js */
 /* Location: ./base_codeigniter_app/assets/scripts/scripts.js */
