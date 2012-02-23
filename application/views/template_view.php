@@ -1,3 +1,23 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * template_view
+ * 
+ * Description
+ * 
+ * @license		Copyright Xulon Press, Inc. All Rights Reserved.
+ * @author		Xulon Press
+ * @link		http://xulonpress.com
+ * @email		info@xulonpress.com
+ * 
+ * @file		template_view.php
+ * @version		1.0
+ * @date		02/21/2012
+ * 
+ * Copyright (c) 2012
+ */
+
+// --------------------------------------------------------------------------
+?>
 <!DOCTYPE html>
 <html lang="en" class="">
   <head>
