@@ -6,6 +6,9 @@
 # *assets/cache/*.css
 # ----------- 
 
+application/cache
+assets/cache
+
 *assets/scripts/tiny_mce/*.gz
 
 *assets/temp/*
