@@ -4,16 +4,6 @@
  * 
  * shows a 404 error with all ci object stuff available.
  * 
- * @license		Copyright Xulon Press, Inc. All Rights Reserved.
- * @author		Xulon Press
- * @link		http://xulonpress.com
- * @email		info@xulonpress.com
- * 
- * @file		error.php
- * @version		1.0
- * @date		02/18/2012
- * 
- * Copyright (c) 2012
  */
 
 // --------------------------------------------------------------------------
@@ -21,9 +11,9 @@
 /**
  * error class.
  * 
- * @extends CI_Controller
+ * @extends Front_Controller
  */
-class error extends CI_Controller
+class error extends Front_Controller
 {
 	// --------------------------------------------------------------------------
 	
@@ -44,4 +34,3 @@ class error extends CI_Controller
 	// --------------------------------------------------------------------------
 }
 /* End of file error.php */
-/* Location: ./bookymark/application/controllers/error.php */

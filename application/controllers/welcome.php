@@ -21,9 +21,9 @@
 /**
  * welcome class.
  * 
- * @extends CI_Controller
+ * @extends Front_Controller
  */
-class welcome extends MY_Controller
+class welcome extends Front_Controller
 {
 	/**
 	 * __construct function.
