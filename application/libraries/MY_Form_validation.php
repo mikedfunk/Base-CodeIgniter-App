@@ -1,8 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * MY_Form_validation
+ * MY Form Validation
  * 
- * Set form_validation error prefixes globally
+ * returns an error array for form errors.
  * 
  * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @author		Mike Funk
@@ -11,9 +11,9 @@
  * 
  * @file		MY_Form_validation.php
  * @version		1.0
- * @date		02/17/2012
+ * @date		03/05/2011
  * 
- * Copyright (c) 2012
+ * Copyright (c) 2011
  */
 
 // --------------------------------------------------------------------------
@@ -23,17 +23,19 @@
  * 
  * @extends CI_Form_validation
  */
-class MY_Form_validation extends CI_Form_validation 
-{
+class MY_Form_validation extends CI_Form_validation {
+	
 	// --------------------------------------------------------------------------
 	
     /**
      * __construct function.
+     *
+     * Just defines the parent and sets the prefix/suffix.
      * 
      * @access public
      * @return void
      */
-    public function __construct()
+    function __construct()
     {
         parent::__construct();
         $this->_error_prefix = '<span class="help-inline error">';
@@ -41,6 +43,20 @@ class MY_Form_validation extends CI_Form_validation
     }
     
     // --------------------------------------------------------------------------
+    
+    /**
+     * getErrorsArray
+     *
+     * Returns an array of the errors rather than just a string.
+     *
+     * @link http://stackoverflow.com/questions/468139/codeigniter-form-validation-get-the-result-as-array-instead-of-string 
+     * @access public
+     * @return array
+     */
+    public function get_errors_array()
+    {
+        return $this->_error_array;
+    }
 }
 /* End of file MY_Form_validation.php */
-/* Location: ./bookymark/application/libraries/MY_Form_validation.php */
+/* Location: ./base_codeigniter_app/application/libraries/MY_Form_validation.php */

@@ -4,10 +4,10 @@
  * 
  * shows a 404 error with all ci object stuff available.
  * 
- * @license		Copyright Xulon Press, Inc. All Rights Reserved.
- * @author		Xulon Press
- * @link		http://xulonpress.com
- * @email		info@xulonpress.com
+ * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
+ * @author		Mike Funk
+ * @link		http://mikefunk.com
+ * @email		mike@mikefunk.com
  * 
  * @file		error.php
  * @version		1.0
@@ -44,4 +44,4 @@ class error extends CI_Controller
 	// --------------------------------------------------------------------------
 }
 /* End of file error.php */
-/* Location: ./bookymark/application/controllers/error.php */
+/* Location: ./base_codeigniter_app/application/controllers/error.php */

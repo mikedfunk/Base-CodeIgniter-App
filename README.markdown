@@ -12,6 +12,7 @@ Includes the following submodules:
 * [JQuery Mockjax](https://github.com/appendto/jquery-mockjax) - excellent tool for mocking ajax requests for JS unit testing.
 * [Carabiner](https://github.com/mikedfunk/carabiner) - drop-in to third_party version of Carabiner - an asset management library. (with added [LessPHP](https://github.com/leafo/lessphp) support)
 * [CI Authentication](https://github.com/mikedfunk/CI-Authentication) - An authentication package for CodeIgniter.
+* [HMVC Modular Extensions](https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc/wiki/Home) from WireDesignz via Calvin Froedge. Adds the ```application/modules``` folder which lets you separate groups of models, views, and controllers into packaged modules.
 
 Additional tweaks:
 ------------------------------
