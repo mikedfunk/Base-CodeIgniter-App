@@ -240,7 +240,7 @@ class MX_Loader extends CI_Loader
 
 		list($path, $_plugin) = Modules::find($plugin.'_pi', $this->_module, 'plugins/');	
 		
-		if ($path === FALSE AND ! is_file($_plugin = APPPATH.'plugins/'.$_plugin.EXT)) {	
+		if ($path === FALSE AND ! is_file($_plugin = APPPATH_U.'plugins/'.$_plugin.EXT)) {	
 			show_error("Unable to locate the plugin file: {$_plugin}");
 		}
 

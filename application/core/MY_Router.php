@@ -17,7 +17,7 @@
  
 // --------------------------------------------------------------------------
 
-require FCPATH_U.APPPATH_U."third_party/MX/Router.php";
+require(FCPATH_U.APPPATH_U."third_party/MX/Router.php");
 
 /**
  * MY_Router class.

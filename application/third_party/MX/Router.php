@@ -114,18 +114,18 @@ class MX_Router extends CI_Router
 		}
 		
 		/* application controller exists? */			
-		if (is_file(APPPATH.'controllers/'.$module.$ext)) {
+		if (is_file(APPPATH_U.'controllers/'.$module.$ext)) {
 			return $segments;
 		}
 		
 		/* application sub-directory controller exists? */
-		if($directory AND is_file(APPPATH.'controllers/'.$module.'/'.$directory.$ext)) {
+		if($directory AND is_file(APPPATH_U.'controllers/'.$module.'/'.$directory.$ext)) {
 			$this->directory = $module.'/';
 			return array_slice($segments, 1);
 		}
 		
 		/* application sub-directory default controller exists? */
-		if (is_file(APPPATH.'controllers/'.$module.'/'.$this->default_controller.$ext)) {
+		if (is_file(APPPATH_U.'controllers/'.$module.'/'.$this->default_controller.$ext)) {
 			$this->directory = $module.'/';
 			return array($this->default_controller);
 		}
