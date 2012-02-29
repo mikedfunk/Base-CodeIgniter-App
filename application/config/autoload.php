@@ -94,7 +94,7 @@ $autoload['libraries'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('slash_helper');
+$autoload['helper'] = array();
 
 
 /*
