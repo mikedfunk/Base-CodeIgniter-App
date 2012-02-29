@@ -6,10 +6,10 @@
 # *assets/cache/*.css
 # ----------- 
 
-application/cache/*
+*application/cache/*
 !.gitignore
 
-assets/cache/*
+*assets/cache/*
 !.gitignore
 
 *assets/scripts/tiny_mce/*.gz
