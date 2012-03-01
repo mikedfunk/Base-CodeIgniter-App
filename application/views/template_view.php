@@ -31,15 +31,15 @@
 
 <?php
 // assets
-$this->carabiner->css(slash('twitter_bootstrap/less/bootstrap.less'));
-$this->carabiner->css(slash('styles/styles.less'));
+$this->carabiner->css('twitter_bootstrap/less/bootstrap.less');
+$this->carabiner->css('styles/styles.less');
 
 // remote jquery
 // $this->carabiner->js('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
 // local jquery
-$this->carabiner->js(slash('scripts/jquery-1.7.min.js'));
-$this->carabiner->js(slash('scripts/actions.js'));
-$this->carabiner->js(slash('scripts/scripts.js'));
+$this->carabiner->js('scripts/jquery-1.7.min.js');
+$this->carabiner->js('scripts/actions.js');
+$this->carabiner->js('scripts/scripts.js');
 $this->carabiner->display();
 ?>
 
