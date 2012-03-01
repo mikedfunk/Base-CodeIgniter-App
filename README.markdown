@@ -23,6 +23,10 @@ Additional tweaks:
  * simple template setup
 * global form_validation delimiters for twitter bootstrap set in ```libraries/MY_Form_validation.php```
 * htaccess from [html5boilerplate](http://html5boilerplate.com) with codeigniter snippet at the top to remove index.php.
+* multiple environment config support. There are 3 new folders inside **config/**: **Development, Production, Testing**.
+ * **Development** is set in **index.php** as the config for localhost
+ * **Production** is anything but localhost
+ * **Testing** is for PHPUnit
 
 Permissions:
 ------------------------------
