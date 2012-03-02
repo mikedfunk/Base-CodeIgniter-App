@@ -12,6 +12,7 @@ Includes the following submodules:
 * [JQuery Mockjax](https://github.com/appendto/jquery-mockjax) - excellent tool for mocking ajax requests for JS unit testing.
 * [Carabiner](https://github.com/mikedfunk/carabiner) - drop-in to third_party version of Carabiner - an asset management library. (with added [LessPHP](https://github.com/leafo/lessphp) support)
 * [CI Authentication](https://github.com/mikedfunk/CI-Authentication) - An authentication package for CodeIgniter.
+* [Sparks](http://getsparks.org) - CodeIgniter's version of Ruby Gems.
 
 Additional tweaks:
 ------------------------------
