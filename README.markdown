@@ -32,6 +32,6 @@ Additional tweaks:
 Permissions:
 ------------------------------
 
-* ```assets/cache``` needs to be writable
+* ```assets/cache``` needs to be writable for JS/CSS combination and minification (turned on by default)
 * ```application/db_cache``` needs to be writable for database query caching to work
 * ```application/cache``` needs to be writable for page caching to work
