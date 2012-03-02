@@ -31,8 +31,7 @@
 
 <?php
 // assets
-$this->carabiner->css('twitter_bootstrap/less/bootstrap.less');
-$this->carabiner->css('styles/styles.less');
+$this->carabiner->css('twitter_bootstrap/docs/assets/css/bootstrap.css');
 
 // remote jquery
 // $this->carabiner->js('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
