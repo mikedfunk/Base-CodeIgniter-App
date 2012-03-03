@@ -23,7 +23,7 @@
  * @category	Loader
  * @link		http://codeigniter.com/user_guide/libraries/loader.html
  */
-class MY_Loader extends MX_Loader
+class MY_Loader extends CI_Loader
 {
     /**
      * Keep track of which sparks are loaded. This will come in handy for being
@@ -48,8 +48,7 @@ class MY_Loader extends MX_Loader
         if(!defined('SPARKPATH'))
         {
             // define('SPARKPATH', 'sparks/');
-            // @link https://bitbucket.org/kenjis/my-ciunit/wiki/Home
-            define('SPARKPATH', BASEPATH . '../../sparks/');
+            define('SPARKPATH', APPPATH . '../sparks/');
         }
 
         $this->_is_lt_210 = (is_callable(array('CI_Loader', 'ci_autoloader'))

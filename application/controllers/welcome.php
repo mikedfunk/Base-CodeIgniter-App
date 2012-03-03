@@ -48,6 +48,7 @@ class welcome extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->spark('carabiner/1.5.2');
 	}
 	
 	// --------------------------------------------------------------------------

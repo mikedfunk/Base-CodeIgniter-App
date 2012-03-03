@@ -13,7 +13,7 @@
 * If you use MY_Loader, change the paraent class.
 */
 
-class CIU_Loader extends CI_Loader {
+class CIU_Loader extends MY_Loader {
 
 	/**
 	 * Load class
