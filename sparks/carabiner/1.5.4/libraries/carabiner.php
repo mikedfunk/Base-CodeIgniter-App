@@ -31,7 +31,7 @@
  * @subpackage	Libraries
  * @category	Asset Management
  * @author		Tony Dewan <tonydewan.com/contact>	
- * @version		1.5.2
+ * @version		1.5.4
  * @license		http://www.opensource.org/licenses/bsd-license.php BSD licensed.
  *
  * @todo		fix new bugs. Duh.

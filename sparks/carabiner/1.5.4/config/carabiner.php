@@ -1,19 +1,17 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * carabiner
+ * carabiner config
  * 
- * config file for carabiner asset management spark.
+ * The config file for carabiner
  * 
- * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
+ * @license		http://www.opensource.org/licenses/bsd-license.php BSD licensed.
  * @author		Mike Funk, Tony Dewan
  * @link		http://mikefunk.com
  * @email		mike@mikefunk.com
  * 
  * @file		carabiner.php
- * @version		1.5.2
- * @date		03/03/2012
- * 
- * Copyright (c) 2012
+ * @version		1.5.4
+ * @date		03/05/2012
  */
 
 /*
@@ -337,5 +335,7 @@ $config['groups']['yui'] = array(
 
 );
 
+// --------------------------------------------------------------------------
+
 /* End of file carabiner.php */
-/* Location: ./base_codeigniter_app/application/config/carabiner.php */
+/* Location: ./carabiner/config/carabiner.php */
