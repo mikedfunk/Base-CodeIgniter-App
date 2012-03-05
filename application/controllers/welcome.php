@@ -48,7 +48,7 @@ class welcome extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->spark('carabiner/1.5.2');
+		$this->load->spark('carabiner/1.5.4');
 	}
 	
 	// --------------------------------------------------------------------------
@@ -63,9 +63,6 @@ class welcome extends CI_Controller
 	 */
 	public function index()
 	{	
-		// load resources
-		$this->load->library('carabiner');
-		
 		// load view with data
 		$this->_data['title'] = 'Welcome to CodeIgniter!';
 		$this->_data['description'] = 'CodeIgniter welcome page';
