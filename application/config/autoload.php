@@ -63,11 +63,7 @@
 |
 */
 
-$autoload['packages'] = array(
-	APPPATH.'third_party/error_arrays', 
-	APPPATH.'third_party/authentication',
-	FCPATH_U . APPPATH_U . 'third_party/carabiner'
-);
+$autoload['packages'] = array();
 
 
 /*
