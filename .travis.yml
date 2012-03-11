@@ -9,5 +9,6 @@ before_script:
   - pyrus channel-discover pear.php-tools.net
   - pyrus install http://pear.php-tools.net/get/vfsStream-0.11.2.tgz
   - phpenv rehash
+  - git submodule foreach git pull origin master
 
 script: phpunit --configuration tests/phpunit.xml 
