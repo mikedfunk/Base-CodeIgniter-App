@@ -60,7 +60,7 @@ exit;
  * it is not, update the paths appropriately.
  */
 	// $system_path = dirname(__FILE__) . '/../../../../codeigniter/system';
-	$system_path = 'codeigniter/system';
+	$system_path = dirname(__FILE__) . '/../../../codeigniter/system';
 
 /*
  *---------------------------------------------------------------
