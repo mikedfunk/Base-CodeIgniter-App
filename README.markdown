@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/mikedfunk/Base-CodeIgniter-App.png)](http://travis-ci.org/mikedfunk/Base-CodeIgniter-App)
+[![Build Status](https://secure.travis-ci.org/mikedfunk/Base-CodeIgniter-App.png?branch=master)](http://travis-ci.org/mikedfunk/Base-CodeIgniter-App)
 
 Base Codeigniter App
 =============================
