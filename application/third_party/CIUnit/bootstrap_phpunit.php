@@ -59,7 +59,6 @@ exit;
  * is that the tests folder is in the same directory path as system.  If
  * it is not, update the paths appropriately.
  */
-	// $system_path = dirname(__FILE__) . '/../../../../codeigniter/system';
 	$system_path = dirname(__FILE__) . '/../../../codeigniter/system';
 
 /*

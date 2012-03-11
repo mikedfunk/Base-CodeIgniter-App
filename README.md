@@ -33,7 +33,7 @@ Additional tweaks:
 * csrf protection is enabled
 * encryption key is set. (***Change this to something unique!!***)
 * Session is restricted by user agent and ip address
-* Session is encrypted
+* Session is encrypted in production environment
 
 Permissions:
 ------------------------------
