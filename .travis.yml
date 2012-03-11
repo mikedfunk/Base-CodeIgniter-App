@@ -6,11 +6,11 @@ phps:
   - 5.4
 
 before_script:
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - pyrus channel-discover pear.php-tools.net
   - pyrus install http://pear.php-tools.net/get/vfsStream-0.11.2.tgz
   - phpenv rehash
   - git submodule update --init
-  - yes
   - git submodule foreach git pull origin master
 
 script: phpunit --configuration tests/phpunit.xml 
