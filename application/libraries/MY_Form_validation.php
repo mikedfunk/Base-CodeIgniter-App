@@ -10,8 +10,8 @@
  * @email		mike@mikefunk.com
  * 
  * @file		MY_Form_validation.php
- * @version		1.0
- * @date		03/05/2011
+ * @version		1.1.0
+ * @date		03/11/2012
  * 
  * Copyright (c) 2011
  */
