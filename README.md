@@ -1,7 +1,7 @@
 [![Build Status](https://secure.travis-ci.org/mikedfunk/Base-CodeIgniter-App.png?branch=master)](http://travis-ci.org/mikedfunk/Base-CodeIgniter-App)
 
 Base Codeigniter App
-=============================
+=====================
 
 Note: this contains a variety of submodules. after cloning, be sure to ```git submodule update --init --recursive``` and you should be good to go.
 
@@ -16,7 +16,7 @@ Includes this awesome stuff:
 * [Sparks](http://getsparks.org) - CodeIgniter's version of Ruby Gems.
 
 Additional tweaks:
-------------------------------
+--------------------
 
 * Welcome page is re-done with:
  * twitter bootstrap
@@ -36,8 +36,16 @@ Additional tweaks:
 * Session is encrypted in production environment
 
 Permissions:
-------------------------------
+--------------------
 
 * ```assets/cache``` needs to be writable for JS/CSS combination and minification (turned on by default)
 * ```application/db_cache``` needs to be writable for database query caching to work
 * ```application/cache``` needs to be writable for page caching to work
+
+Change Log
+--------------------
+
+**1.1.0**
+
+* Support for [travis-ci](http://travis-ci.org)
+* Updated db config
