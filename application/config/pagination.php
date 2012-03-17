@@ -3,7 +3,7 @@
  * Pagination Config
  * 
  * Just applying codeigniter's standard pagination config with twitter 
- * bootstrap stylings
+ * bootstrap stylings.
  * 
  * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @author		Mike Funk
@@ -11,10 +11,8 @@
  * @email		mike@mikefunk.com
  * 
  * @file		pagination.php
- * @version		1.0
+ * @version		1.1.1
  * @date		09/28/2011
- * 
- * Copyright (c) 2011
  */
  
 // --------------------------------------------------------------------------

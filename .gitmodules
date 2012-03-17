@@ -1,18 +1,12 @@
 [submodule "tests/assets/scripts/jquery-mockjax"]
 	path = tests/assets/scripts/jquery-mockjax
 	url = git://github.com/appendto/jquery-mockjax.git
-[submodule "assets/twitter_bootstrap"]
-	path = assets/twitter_bootstrap
-	url = git@github.com:mikedfunk/bootstrap.git
-[submodule "application/third_party/carabiner"]
-	path = application/third_party/carabiner
-	url = git@github.com:mikedfunk/carabiner.git
 [submodule "tests/assets/scripts/qunit"]
 	path = tests/assets/scripts/qunit
 	url = git://github.com/jquery/qunit.git
-[submodule "application/third_party/authentication"]
-	path = application/third_party/authentication
-	url = git://github.com/mikedfunk/CI-Authentication.git
 [submodule "codeigniter"]
 	path = codeigniter
 	url = git://github.com/EllisLab/CodeIgniter.git
+[submodule "assets/twitter_bootstrap"]
+	path = assets/twitter_bootstrap
+	url = git://github.com/mikedfunk/bootstrap.git

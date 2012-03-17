@@ -10,10 +10,8 @@
  * @email		mike@mikefunk.com
  * 
  * @file		welcome.php
- * @version		1.0
- * @date		02/08/2012
- * 
- * Copyright (c) 2012
+ * @version		1.1.1
+ * @date		03/11/2012
  */
 
 // --------------------------------------------------------------------------

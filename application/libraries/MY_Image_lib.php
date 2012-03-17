@@ -10,8 +10,8 @@
  * @email		mike@mikefunk.com
  * 
  * @file		MY_Image_lib.php
- * @version		1.0
- * @date		04/02/2011
+ * @version		1.1.1
+ * @date		03/11/2012
  * 
  * Copyright (c) 2011
  */

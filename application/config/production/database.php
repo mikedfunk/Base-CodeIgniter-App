@@ -74,22 +74,6 @@
 $active_group = 'remote';
 $active_record = TRUE;
 
-$db['local']['hostname'] = '127.0.0.1';
-$db['local']['username'] = 'root';
-$db['local']['password'] = '';
-$db['local']['database'] = 'db_name';
-$db['local']['dbdriver'] = 'mysql';
-$db['local']['dbprefix'] = '';
-$db['local']['pconnect'] = TRUE;
-$db['local']['db_debug'] = (ENVIRONMENT == 'production' ? FALSE : TRUE);
-$db['local']['cache_on'] = FALSE;
-$db['local']['cachedir'] = FCPATH.APPPATH.'db_cache/';
-$db['local']['char_set'] = 'utf8';
-$db['local']['dbcollat'] = 'utf8_general_ci';
-$db['local']['swap_pre'] = '';
-$db['local']['autoinit'] = TRUE;
-$db['local']['stricton'] = FALSE;
-
 $db['remote']['hostname'] = 'hostname';
 $db['remote']['username'] = 'username';
 $db['remote']['password'] = 'pass';
@@ -105,22 +89,6 @@ $db['remote']['dbcollat'] = 'utf8_general_ci';
 $db['remote']['swap_pre'] = '';
 $db['remote']['autoinit'] = TRUE;
 $db['remote']['stricton'] = FALSE;
-
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
-$db['default']['dbdriver'] = 'mysql';
-$db['default']['dbprefix'] = '';
-$db['default']['pconnect'] = FALSE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
-$db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = FALSE;
 $db['default']['failover'] = array();
 
 /* End of file database.php */
