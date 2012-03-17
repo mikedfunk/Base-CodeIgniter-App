@@ -44,6 +44,11 @@ Permissions:
 
 Change Log
 --------------------
+**1.1.1**
+
+* Updated Twitter Bootstrap to 2.0.2
+* Removed copyright statements from docblocks
+* Updated all relevant docblocks to @version 1.1.1
 
 **1.1.0**
 
