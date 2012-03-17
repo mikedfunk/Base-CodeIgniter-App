@@ -10,7 +10,7 @@
  * @email		mike@mikefunk.com
  * 
  * @file		welcome.php
- * @version		1.1.0
+ * @version		1.1.1
  * @date		03/11/2012
  */
 
