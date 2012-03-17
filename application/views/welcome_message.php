@@ -12,8 +12,6 @@
  * @file		test_view.php
  * @version		1.1.0
  * @date		03/11/2012
- * 
- * Copyright (c) 2012
  */
 ?>
 
