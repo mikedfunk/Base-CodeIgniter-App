@@ -425,6 +425,7 @@ class CIU_Loader extends MY_Loader {
 
 	function reset()
 	{
+		$this->_ci_loaded_sparks = array();
 		$this->_ci_cached_vars = array();
 		$this->_ci_classes = array();
 		$this->_ci_loaded_files = array();
