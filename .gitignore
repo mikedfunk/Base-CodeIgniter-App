@@ -1,0 +1,20 @@
+*user_guide
+*application/logs/log-*.php
+
+# -----------
+# *assets/cache/*.js
+# *assets/cache/*.css
+# ----------- 
+
+*assets/cache/*
+!.gitkeep
+
+*application/cache/*
+!.gitkeep
+
+*application/db_cache/*
+!.gitkeep
+
+*application/db_backups/*
+
+*.DS_Store
