@@ -60,7 +60,7 @@ class welcome extends CI_Controller
 	 * @return void
 	 */
 	public function index()
-	{	
+	{
 		// load view with data
 		$this->_data['title'] = 'Welcome to CodeIgniter!';
 		$this->_data['description'] = 'CodeIgniter welcome page';
