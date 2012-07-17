@@ -9,7 +9,7 @@
  * @email		mike@mikefunk.com
  * 
  * @file		actions.js
- * @version		1.1.1
+ * @version		1.1.2
  * @date		02/08/2012
  */
 

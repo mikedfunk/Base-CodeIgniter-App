@@ -9,7 +9,7 @@
  * @email		mike@mikefunk.com
  * 
  * @file		test_scripts.js
- * @version		1.1.1
+ * @version		1.1.2
  * @date		02/07/2012
  */
 
