@@ -48,6 +48,7 @@ class MY_Loader extends CI_Loader
         if(!defined('SPARKPATH'))
         {
             // define('SPARKPATH', 'sparks/');
+            // @link http://mikefunk.com/?p=27
             define('SPARKPATH', APPPATH . '../sparks/');
         }
 
@@ -97,7 +98,7 @@ class MY_Loader extends CI_Loader
         }
         else
         {
-	
+
 	        $spark = ltrim($spark, '/');
 	        $spark = rtrim($spark, '/');
 	
