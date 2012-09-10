@@ -1,0 +1,3 @@
+[submodule "codeigniter"]
+	path = codeigniter
+	url = git://github.com/EllisLab/CodeIgniter.git
