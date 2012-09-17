@@ -1,0 +1,7 @@
+name: assets
+
+version: 1.5.1
+
+compatibility: 2.1.0
+
+tags: ["assets", "css", "javascript", "lesscss", "cofeescript"]
