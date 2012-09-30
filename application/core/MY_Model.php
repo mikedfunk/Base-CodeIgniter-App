@@ -736,7 +736,7 @@ class MY_Model extends CI_Model
     /**
      * Run validation on the passed data
      */
-    private function _run_validation($data)
+    protected function _run_validation($data)
     {
         if($this->skip_validation)
         {

@@ -169,6 +169,17 @@ class MY_Controller extends CI_Controller
      */
     private function _load_models()
     {
+    	// autoload model for this controller
+    	$this->load->helper('inflector');
+
+		$model = strtolower(singular(get_class($this)));
+
+		if (file_exists(APPPATH . 'models/' . $model . '_model.php'))
+		{
+			$this->models[] = $model;
+		}
+		
+		// load all models
         foreach ($this->models as $model)
         {
             $this->load->model($this->_model_name($model), $model);
