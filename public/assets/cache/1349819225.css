@@ -7,6 +7,9 @@ body {
 tr:hover .actions_wrap {
   visibility: visible;
 }
+.actions_col {
+  width: 1%;
+}
 article,
 aside,
 details,

@@ -10,16 +10,16 @@
  */
 
 require_once(APPPATH . 'presenters/auth_presenter.php');
- 
+
 class auth extends MY_Controller
 {
 	public $data;
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * __construct function.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
@@ -30,15 +30,17 @@ class auth extends MY_Controller
 		$this->load->spark('assets/1.5.1');
 		$this->load->helper('url');
 		$this->load->helper('partial');
+		$this->data['auth'] = new Auth_presenter($this->input->post());
+		$this->load->model('bookmark_model', 'bookmark');
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * login function.
 	 *
 	 * shows login form, handles validation.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
@@ -49,7 +51,8 @@ class auth extends MY_Controller
 		$this->load->library('form_validation');
 		$this->data['auth'] = new Auth_presenter($this->input->post());
 		$this->ci_authentication->remember_me();
-		
+
+		// form validation
 		$validate = array(
 			array(
 				'field' => 'email_address',
@@ -63,20 +66,21 @@ class auth extends MY_Controller
 			)
 		);
 		$this->form_validation->set_rules($validate);
-		
+
+		// check for valid form, reshow form if invalid, else login and redirect
 		if ($this->form_validation->run())
 		{
 			$this->ci_authentication->do_login();
 		}
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * login_new_password function.
 	 *
 	 * shows login_new_password form, handles validation.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
@@ -87,7 +91,7 @@ class auth extends MY_Controller
 		$this->load->library('form_validation');
 		$this->data['auth'] = new Auth_presenter($this->input->post());
 		$this->ci_authentication->remember_me();
-		
+
 		// form validation
 		$validate = array(
 			array(
@@ -112,21 +116,23 @@ class auth extends MY_Controller
 			)
 		);
 		$this->form_validation->set_rules($validate);
+
+		// check for valid form, reshow form if invalid, else login and redirect
 		if ($this->form_validation->run())
 		{
 			// redirect to configured home page
 			$this->ci_authentication->do_login();
 		}
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * _email_address_check function.
 	 *
 	 * checks for an email in the db and checks to make sure registration link
 	 * has been clicked.
-	 * 
+	 *
 	 * @access public
 	 * @param string $email_address
 	 * @return bool
@@ -155,14 +161,14 @@ class auth extends MY_Controller
 			}
 		}
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * _password_check function.
 	 *
 	 * checks to ensure password matches username in db.
-	 * 
+	 *
 	 * @access public
 	 * @param string $password
 	 * @return bool
@@ -180,15 +186,15 @@ class auth extends MY_Controller
 			return true;
 		}
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * register function.
 	 *
-	 * displays register form, handles validation, runs ci_authentication library 
+	 * displays register form, handles validation, runs ci_authentication library
 	 * method on success.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
@@ -196,7 +202,7 @@ class auth extends MY_Controller
 	{
 		$this->load->library('form_validation');
 		$this->data['auth'] = new Auth_presenter($this->input->post());
-		
+
 		// form validation
 		$validate = array(
 			array(
@@ -223,14 +229,14 @@ class auth extends MY_Controller
 			$this->ci_authentication->do_register();
 		}
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * resend_register_email function.
 	 *
 	 * resends register email based on confirm_string, redirects to configured page.
-	 * 
+	 *
 	 * @access public
 	 * @param string $confirm_string
 	 * @return void
@@ -239,15 +245,15 @@ class auth extends MY_Controller
 	{
 		$this->ci_authentication->resend_register_email($confirm_string);
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * confirm_register function.
 	 *
 	 * verifies confirm link, clears confirm_string column for that user, sets
 	 *  flashdata for success notice, redirects to login page.
-	 * 
+	 *
 	 * @access public
 	 * @param string $confirm_string
 	 * @return void
@@ -256,14 +262,14 @@ class auth extends MY_Controller
 	{
 		$this->ci_authentication->do_confirm_register($confirm_string);
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * request_reset_password function.
 	 *
 	 * send email confirmation to user, redirects to configured page.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
@@ -272,15 +278,15 @@ class auth extends MY_Controller
 		$email_address = $this->input->get('email_address');
 		$this->ci_authentication->do_request_reset_password($email_address);
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * confirm_reset_password function.
 	 *
 	 * validates whether encryption of passed email and encrypted string match,
 	 * emails temp password and redirects to configured page (login new password)
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
@@ -288,15 +294,15 @@ class auth extends MY_Controller
 	{
 		$this->ci_authentication->do_confirm_reset_password();
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * logout function.
 	 *
-	 * destroys the session, unsets userdata, sets flashdata, redirects to 
+	 * destroys the session, unsets userdata, sets flashdata, redirects to
 	 * configured page (login page).
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
@@ -304,19 +310,19 @@ class auth extends MY_Controller
 	{
 		$this->ci_authentication->do_logout();
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * alert function.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
 	public function alert()
 	{
 	}
-	
+
 	// --------------------------------------------------------------------------
 }
 /* End of file auth.php */

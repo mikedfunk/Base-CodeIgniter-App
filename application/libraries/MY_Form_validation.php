@@ -1,29 +1,31 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * MY Form Validation
- * 
- * Gets an array of errors.
- * 
- * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
- * @author		Mike Funk
- * @link		http://mikefunk.com
- * @email		mike@mikefunk.com
- * 
- * @file		MY_Form_validation.php
- * @version		1.3.1
- * @date		03/12/2012
- * 
- * Copyright (c) 2011
- */
 
-// --------------------------------------------------------------------------
+/**
+ * allows for setting form error prefix and suffix in config, allows getting
+ * form errors in an array
+ *
+ * @author Mike Funk
+ * @email mfunk@christianpublishing.com
+ *
+ * @file MY_Form_validation.php
+ */
 
 /**
  * MY_Form_validation class.
  * 
  * @extends CI_Form_validation
  */
-class MY_Form_validation extends CI_Form_validation {
+class MY_Form_validation extends CI_Form_validation 
+{
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * codeigniter
+	 * 
+	 * @var object
+	 * @access private
+	 */
+	private $_ci;
 	
 	// --------------------------------------------------------------------------
 	
@@ -38,8 +40,10 @@ class MY_Form_validation extends CI_Form_validation {
     function __construct()
     {
         parent::__construct();
-        $this->_error_prefix = '<span class="help-inline error">';
-        $this->_error_suffix    = '</span>';
+        $this->_ci =& get_instance();
+        $this->_ci->config->load('form_validation');
+        $this->_error_prefix = (config_item('form_error_prefix') ? config_item('form_error_prefix') : '');
+        $this->_error_suffix = (config_item('form_error_suffix') ? config_item('form_error_suffix') : '');
     }
     
     // --------------------------------------------------------------------------
@@ -59,4 +63,4 @@ class MY_Form_validation extends CI_Form_validation {
     }
 }
 /* End of file MY_Form_validation.php */
-/* Location: ./bookymark/application/libraries/MY_Form_validation.php */
+/* Location: ./application/libraries/MY_Form_validation.php */

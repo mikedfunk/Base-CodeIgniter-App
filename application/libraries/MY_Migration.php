@@ -1,65 +1,53 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+
 /**
- * MY_Migration
- * 
- * Extends migrations to separate out the table.
- * 
- * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
- * @author		Mike Funk
- * @link		http://mikefunk.com
- * @email		mike@mikefunk.com
- * 
- * @file		MY_Migration.php
- * @version		1.0.0
- * @date		03/18/2012
+ * extends migration to separate out the table
+ *
+ * @author Mike Funk
+ * @email mfunk@christianpublishing.com
+ *
+ * @file MY_Migration.php
  */
 
 // --------------------------------------------------------------------------
 
 /**
  * MY_Migration class.
- * 
+ *
  * @extends CI_Migration
  */
 class MY_Migration extends CI_Migration
-{	
+{
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * _migration_table
-	 * 
+	 *
 	 * @var mixed
 	 * @access protected
 	 */
-	protected $_migration_table;
-	
+	protected $_migration_table = 'migrations';
+
 	// --------------------------------------------------------------------------
-	
-	/**
-	 * _ci
-	 * 
-	 * @var mixed
-	 * @access protected
-	 */
-	protected $_ci;
-	
-	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * __construct function.
-	 * 
+	 *
 	 * @access public
 	 * @param array $config (default: array())
 	 * @return void
 	 */
 	public function __construct($config = array())
 	{
-		# Only run this constructor on main library load
-		// if (get_parent_class($this) !== FALSE)
-		// {
-		// 	return;
-		// }
-		
+		// Load migration language
+		$this->lang->load('migration');
+
+		// Only run this constructor on main library load
+		if (get_parent_class($this) !== 'CI_Migration')
+		{
+			return;
+		}
+
 		if (!isset($config['migration_table']) || $config['migration_table'] == '')
 		{
 			$config['migration_table'] = 'migrations';
@@ -83,9 +71,6 @@ class MY_Migration extends CI_Migration
 
 		// Add trailing slash if not set
 		$this->_migration_path = rtrim($this->_migration_path, '/').'/';
-
-		// Load migration language
-		$this->lang->load('migration');
 
 		// They'll probably be using dbforge
 		$this->load->dbforge();
@@ -132,9 +117,32 @@ class MY_Migration extends CI_Migration
 			'version' => $migrations
 		));
 	}
-	
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Set's the schema to the latest migration
+	 *
+	 * @access	public
+	 * @return	mixed	true if already latest, false if failed, int if upgraded
+	 */
+	public function latest()
+	{
+		if ( ! $migrations = $this->find_migrations())
+		{
+			$this->_error_string = $this->lang->line('migration_none_found');
+			return false;
+		}
+
+		$last_migration = basename(end($migrations));
+
+		// Calculate the last migration step from existing migration
+		// filenames and procceed to the standard version migration
+		return $this->version((int) substr($last_migration, 0, 3));
+	}
+
 	// --------------------------------------------------------------------------
 }
 
 /* End of file MY_Migration.php */
-/* Location: ./xpress/application/libraries/MY_Migration.php */
+/* Location: ./application/libraries/MY_Migration.php */

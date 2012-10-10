@@ -1,0 +1,13 @@
+language: php
+
+phps:
+  - 5.3
+  - 5.4
+
+before_script:
+  - mysql -e 'create database bookymark_test;'
+  - mysql -u root bookymark_test < setup.sql
+
+script:
+  - cd tests
+  - phpunit

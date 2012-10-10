@@ -14,7 +14,7 @@ $this->data['title'] = 'Register';
 ?>
 <section>
   <div class="container">
-    <?=form_open('auth/register', array('id' => 'register_form', 'class' => 'form-horizontal'))?>
+    <?=$auth->register_form_open()?>
       <div class="page-header"><h1>Register</h1></div><!--page-header-->
       <?=$this->ci_alerts->display()?>
       <?=$auth->email_address_field()?>

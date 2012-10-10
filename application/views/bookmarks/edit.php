@@ -9,16 +9,20 @@
  * @file edit.php
  */
 // --------------------------------------------------------------------------
-$this->data['title'] = 'Edit Bookymark';
+$this->data['title'] = (isset($this->bookmark) ? 'Edit Bookymark' : 'New Bookymark');
 ?>
 <section>
   <div class="container">
+    <ul class="breadcrumb">
+      <li><a href="<?=base_url()?>">Home</a> <span class="divider">&rarr;</span></li>
+      <li><a href="<?=base_url('bookmarks')?>">Bookmarks</a> <span class="divider">&rarr;</span></li>
+      <?=$bookmark->active_breadcrumb()?>
+    </ul>
     <div class="page-header">
       <h1><?=$bookmark->title()?> <small>Items with a * are required</small></h1>
     </div><!--page-header-->
     <?=$this->ci_alerts->display()?>
-    <?php $hidden = (isset($bookmark) ? array('id' => $bookmark->id) : ''); ?>
-    <?=form_open('', array('class' => 'form-horizontal'), $hidden)?>
+    <?=$bookmark->form_open()?>
       <?=$bookmark->url_field()?>
       <?=$bookmark->description_field()?>
       <div class="form-actions">

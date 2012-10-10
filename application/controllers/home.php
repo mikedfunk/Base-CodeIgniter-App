@@ -9,6 +9,7 @@
  * @file home.php
  */
 
+require_once(APPPATH . 'presenters/auth_presenter.php');
 
 // --------------------------------------------------------------------------
 
@@ -36,6 +37,7 @@ class home extends MY_Controller
 		$this->load->spark('assets/1.5.1');
 		$this->load->helper('partial');
 		$this->load->helper('url');
+		$this->data['auth'] = new Auth_presenter(false);
 	}
 	
 	// --------------------------------------------------------------------------

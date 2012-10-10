@@ -9,7 +9,7 @@
  * @file auth_presenter.php
  */
 
-require_once(APPPATH . 'presenters/bookmark_presenter.php');
+require_once(APPPATH . 'presenters/presenter.php');
 
 class Auth_presenter extends Presenter
 {
@@ -26,8 +26,14 @@ class Auth_presenter extends Presenter
 		$return = '';
 		
 		// form value
-		if (set_value('email_address') != '') {$value = set_value('email_address');}
-		else {$value = get_cookie('email_address');}
+		if (set_value('email_address') != '') 
+		{
+			$value = set_value('email_address');
+		}
+		else 
+		{
+			$value = (function_exists('get_cookie') ? get_cookie('email_address') : '');
+		}
 		
 		$return .= '<div class="control-group form_item ' . (form_error('email_address') != '' ? 'error' : '') . '">'
 		. form_label('Email Address: *', 'email_address_field', array('class' => 'control-label'))
@@ -52,8 +58,14 @@ class Auth_presenter extends Presenter
 		$return = '';
 		
 		// form value
-		if (set_value('password') != '') {$value = set_value('password');}
-		else {$value = get_cookie('password');}
+		if (set_value('password') != '') 
+		{
+			$value = set_value('password');
+		}
+		else 
+		{
+			$value = (function_exists('get_cookie') ? get_cookie('password') : '');
+		}
 		
 		$return .= '<div class="control-group form_item ' . (form_error('password') != '' ? 'error' : '') . '">'
 		. form_label('Password: *', 'password_field', array('class' => 'control-label'))
@@ -153,8 +165,14 @@ class Auth_presenter extends Presenter
 	public function remember_me_field()
 	{
 		// checked or not
-		if ($this->input->post('remember_me') !== false) {$checked = $this->input->post('remember_me');}
-		else {$checked = get_cookie('remember_me');}
+		if ($this->input->post('remember_me') !== false) 
+		{
+			$checked = $this->input->post('remember_me');
+		}
+		else 
+		{
+			$checked = (function_exists('get_cookie') ? get_cookie('remember_me') : false);
+		}
 		
 		$checkbox = form_checkbox(array('name' => 'remember_me', 'id' => 'remember_me_field', 'value' => '1', 'checked' => (boolean)$checked));
 
@@ -163,6 +181,44 @@ class Auth_presenter extends Presenter
 		. form_label($checkbox . ' <span>Remember Me</span>', 'remember_me_field', array('class' => 'checkbox'))
 		. '</div><!--controls-->
 		</div><!--control-group-->';
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * login info if logged in otherwise nothing.
+	 * 
+	 * @access public
+	 * @return string
+	 */
+	public function logged_in_box()
+	{
+		$return = '';
+
+		// logged in text
+		if (is_callable('auth_username'))
+		{
+			if (auth_username() !== FALSE)
+			{
+				$return .= '<p class="navbar-text pull-right"><i class="icon-user"></i> Logged in as <strong>'.auth_username().'</strong>. <i class="icon-share"></i> <a href="'.base_url().'auth/logout">Logout</a></p>';
+			}
+		}
+		return $return;
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * open the register form with params and hidden fields.
+	 * 
+	 * @access public
+	 * @return string
+	 */
+	public function register_form_open()
+	{
+		$hidden = array('role_id' => 2);
+		$params = array('id' => 'register_form', 'class' => 'form-horizontal');
+		return form_open('', $params, $hidden);
 	}
 	
 	// --------------------------------------------------------------------------

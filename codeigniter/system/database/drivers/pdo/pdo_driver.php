@@ -78,7 +78,11 @@ class CI_DB_pdo_driver extends CI_DB {
 			$this->_like_escape_chr = '!';
 		}
 
-		empty($this->database) OR $this->hostname .= ';dbname='.$this->database;
+		/**
+		 * @link http://stackoverflow.com/questions/11054618/codeigniter-pdo-database-driver-not-working
+		 */
+		// empty($this->database) OR $this->hostname .= ';dbname='.$this->database;
+		$this->hostname = 'mysql:dbname='.$this->database.';host='.$this->hostname;
 
 		$this->trans_enabled = FALSE;
 

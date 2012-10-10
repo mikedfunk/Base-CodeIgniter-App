@@ -136,6 +136,7 @@ class MY_Model extends CI_Model
     public function get_by()
     {
         $where = func_get_args();
+        if (is_array($where[0])) {$where = $where[0];}
         $this->_set_where($where);
 
         if ($this->soft_delete && $this->_temporary_with_deleted !== TRUE)
@@ -175,6 +176,7 @@ class MY_Model extends CI_Model
     public function get_many_by()
     {
         $where = func_get_args();
+        if (is_array($where[0])) {$where = $where[0];}
         $this->_set_where($where);
 
         if ($this->soft_delete && $this->_temporary_with_deleted !== TRUE)
@@ -377,6 +379,7 @@ class MY_Model extends CI_Model
     public function delete_by()
     {
         $where = func_get_args();
+        if (is_array($where[0])) {$where = $where[0];}
         $this->_set_where($where);
 
         $where = $this->trigger('before_delete', $where);

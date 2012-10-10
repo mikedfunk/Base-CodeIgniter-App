@@ -14,7 +14,7 @@ $this->data['title'] = 'Login';
 ?>
 <section>
   <div class="container">
-    <?=form_open('auth/login', array('id' => 'login_form', 'class' => 'form-horizontal'))?>
+    <?=form_open('', array('id' => 'login_form', 'class' => 'form-horizontal'))?>
       <div class="page-header"><h1>Please Login</h1></div><!--page-header-->
       <?=$this->ci_alerts->display()?>
       <?=$auth->email_address_field()?>

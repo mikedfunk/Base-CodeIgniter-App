@@ -11,6 +11,11 @@
 
 require_once(APPPATH . 'presenters/presenter.php');
 
+/**
+ * Bookmark_presenter class.
+ * 
+ * @extends Presenter
+ */
 class Bookmark_presenter extends Presenter
 {
 	// --------------------------------------------------------------------------
@@ -42,25 +47,26 @@ class Bookmark_presenter extends Presenter
 	 */
 	public function table()
 	{
-		if (!$this->bookmark)
+		if (!(array)$this->bookmark)
 		{
-			return '<div class="alert alert-danger">No bookmarks found. Add one!</div><!--alert-->';
+			return '<div class="alert">No bookmarks found. Add one!</div><!--alert-->';
 		}
 		else
 		{
 			$return = '<table class="table table-striped table-hover"><thead><th>URL</th><th>Description</th></thead><tbody>';
-			// return '<pre>' . print_r($this->bookmark, TRUE) . '</pre>';
+			
+			// table rows
 			foreach($this->bookmark as $item)
 			{
 				$return .= '<tr><td>' . $item->url . '</td>';
 				$return .= '<td>' . $item->description . '</td>';
-				$return .= '<td><div class="actions_wrap">
+				$return .= '<td class="actions_col"><div class="actions_wrap">
 				<div class="btn-group">
   <a class="btn btn-mini btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
     <i class="icon-cog icon-white"></i>
     <span class="caret"></span>
   </a>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu pull-right">
     <li><a href="'.base_url().'bookmarks/edit/' . $item->id . '">Edit</a></li>
     <li><a href="'.base_url().'bookmarks/delete/' . $item->id . '">Delete</a></li>
   </ul>
@@ -122,6 +128,36 @@ class Bookmark_presenter extends Presenter
 		. form_error('description')
 		. '</div><!--controls-->
 		</div><!--control-group-->';
+		return $return;
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * open the form differently if it's an edit or insert form.
+	 * 
+	 * @access public
+	 * @return string
+	 */
+	public function form_open()
+	{
+		$hidden = ($this->bookmark ? array('id' => $this->bookmark->id, 'user_id' => auth_id()) : array('user_id' => auth_id()));
+		return form_open('', array('class' => 'form-horizontal'), $hidden);
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * show "edit" or "new".
+	 * 
+	 * @access public
+	 * @return string
+	 */
+	public function active_breadcrumb()
+	{
+		$return = '<li class="active">';
+		$return .= (!$this->bookmark ? 'Add' : 'Edit');
+		$return .= '</li>';
 		return $return;
 	}
 	

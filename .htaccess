@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule !^public/ /public%{REQUEST_URI} [L,R=301]

@@ -1,62 +1,76 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * general error template
+ *
+ * @author Mike Funk
+ * @email mfunk@christianpublishing.com
+ *
+ * @file error_general.php
+ */
+
+ // --------------------------------------------------------------------------
+?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Error</title>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8">
+    <title>Error</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!--<link type="text/css" href="assets/css/styles.less" />-->
+<link type="text/css" rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
 <style type="text/css">
-
-::selection{ background-color: #E13300; color: white; }
-::moz-selection{ background-color: #E13300; color: white; }
-::webkit-selection{ background-color: #E13300; color: white; }
-
-body {
-	background-color: #fff;
-	margin: 40px;
-	font: 13px/20px normal Helvetica, Arial, sans-serif;
-	color: #4F5155;
-}
-
-a {
-	color: #003399;
-	background-color: transparent;
-	font-weight: normal;
-}
-
-h1 {
-	color: #444;
-	background-color: transparent;
-	border-bottom: 1px solid #D0D0D0;
-	font-size: 19px;
-	font-weight: normal;
-	margin: 0 0 14px 0;
-	padding: 14px 15px 10px 15px;
-}
-
-code {
-	font-family: Consolas, Monaco, Courier New, Courier, monospace;
-	font-size: 12px;
-	background-color: #f9f9f9;
-	border: 1px solid #D0D0D0;
-	color: #002166;
-	display: block;
-	margin: 14px 0 14px 0;
-	padding: 12px 10px 12px 10px;
-}
-
-#container {
-	margin: 10px;
-	border: 1px solid #D0D0D0;
-	-webkit-box-shadow: 0 0 8px #D0D0D0;
-}
-
-p {
-	margin: 12px 15px 12px 15px;
+section {
+	margin-top: 60px;
 }
 </style>
-</head>
-<body>
-	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
-	</div>
-</body>
+
+<script type="text/javascript" src="/assets/js/scripts.js"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.js"></script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+	<!--[if IE]><![endif]-->
+
+    <!-- fav and touch icons -->
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+  </head>
+  <body>
+
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="">Bookymark</a>
+        </div><!--container-->
+        </div><!--fill-->
+        </div><!--navbar-inner-->
+</div><!--navbar-->
+
+<section>
+<div class="container">
+  <h1><?=$heading?></h1>
+  <p><?=$message?></p>
+</div><!--container-->
+</section>
+  <footer>
+<div class="footer">
+<hr />
+<div class="container">
+<p>By <a href="http://mikefunk.com">Mike Funk</a> <a class="pull-right" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</p>
+</div><!--container-->
+</div><!--footer-->
+</footer>
+<a href="https://github.com/mikedfunk/bookymark"><img style="position: fixed; z-index: 9999; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+  </body>
 </html>
+<?php
+/* End of file error_general.php */
+/* Location: ./application/errors/error_general.php */

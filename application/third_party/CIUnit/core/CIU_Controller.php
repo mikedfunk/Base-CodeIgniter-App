@@ -4,7 +4,7 @@ if (! defined('BASEPATH')) {
 	exit('No direct script access');
 }
 
-class CIU_Controller extends CI_Controller {
+class CIU_Controller extends MY_Controller {
 	
 	public function index()
 	{

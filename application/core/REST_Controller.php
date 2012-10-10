@@ -7,6 +7,8 @@
  * @link https://github.com/efendibooks/codeigniter-handbook-vol-2/blob/master/application/core/MY_Controller.php
  */
 
+require_once(APPPATH.'libraries/api/exceptions.php');
+
 class REST_Controller extends CI_Controller
 {
 	public $params = array();
@@ -21,13 +23,14 @@ class REST_Controller extends CI_Controller
 
 	protected $client = FALSE;
 
-	const LIMIT = 100;
+	const LIMIT = 9999;
 	const LIMIT_TIME = 3600;
 
 	public function __construct()
 	{
 		parent::__construct();
 
+		get_instance()->load->helper('url');
 		$this->_detect_method();
 		$this->_detect_response_type();
 	}
@@ -42,7 +45,7 @@ class REST_Controller extends CI_Controller
 
 			call_user_func_array(array($this, $method), $params);
 
-			$formatted_data = $this->format($this->data);			
+			$formatted_data = $this->format($this->data);
 			$this->respond($formatted_data);
 		}
 		catch (API\Exceptions\Exception $e)
@@ -52,7 +55,7 @@ class REST_Controller extends CI_Controller
 				'type' => join('', array_slice(explode('\\', get_class($e)), -1)),
 				'message' => $e->getMessage()
 			));
-			
+
 			$this->status_code = $e->getCode();
 			$this->respond($formatted_data);
 		}
@@ -87,7 +90,7 @@ class REST_Controller extends CI_Controller
 	protected function _detect_response_type()
 	{
 		$content_type = FALSE;
-		
+
 		if (strpos($this->uri->uri_string, '.') > 0)
 		{
 			$content_type_arr = explode('.', $this->uri->uri_string);
@@ -103,7 +106,7 @@ class REST_Controller extends CI_Controller
 				$content_type = $key;
 			}
 		}
-		
+
 		if (!in_array($content_type, array_keys($this->formats)))
 		{
 			$this->status_code = 406;
@@ -157,7 +160,7 @@ class REST_Controller extends CI_Controller
 		{
 			$date = strtotime($this->client->throttled_at) + self::LIMIT_TIME;
 			$date = date('Y-m-d H:i:s', $date);
-			
+
 			throw new API\Exceptions\Throttled($date);
 		}
 		else
@@ -195,10 +198,10 @@ class REST_Controller extends CI_Controller
 
 	protected function format($data)
 	{
-		if (ENVIRONMENT == 'development')
-		{
-			$data = $this->add_debugging_info($data);
-		}
+		// if (ENVIRONMENT == 'development')
+		// {
+		// 	$data = $this->add_debugging_info($data);
+		// }
 
 		$method = '_format_' . $this->response_format;
 		return call_user_func_array(array($this, $method), array( $data ));
@@ -262,9 +265,10 @@ class REST_Controller extends CI_Controller
 
 	protected function _calculate_signature($path, $timestamp)
 	{
-		$hash = $path . http_build_query($_GET) . http_build_query($this->params);
+		// $hash = $path . http_build_query($_GET) . http_build_query($this->params);
+		$hash = $path . http_build_query($this->params);
 		$hash .= $timestamp . $this->client->shared_secret;
-		
+
 		return sha1($hash);
 	}
 }

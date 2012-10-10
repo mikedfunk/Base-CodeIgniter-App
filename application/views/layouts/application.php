@@ -24,13 +24,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <?php 
-Assets::css(array(
+$this->assets->css(array(
 	'assets/css/styles.less',
 	'assets/bootstrap/css/bootstrap.min.css'
 	
 )); 
-Assets::cdn(array('jquery'));
-Assets::js(array(
+$this->assets->cdn(array('jquery'));
+$this->assets->js(array(
 	'assets/js/scripts.js',
 	'assets/bootstrap/js/bootstrap.js'
 ));
@@ -43,11 +43,11 @@ Assets::js(array(
 	<!--[if IE]><![endif]-->
 	
     <!-- fav and touch icons -->
+    <link rel="shortcut icon" href="<?=base_url()?>assets/img/favicon.ico">
 <?php /*
-    <link rel="shortcut icon" href="<?=base_url()?>assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="<?=base_url()?>assets/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?=base_url()?>assets/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?=base_url()?>assets/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" href="<?=base_url()?>assets/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?=base_url()?>assets/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?=base_url()?>assets/img/apple-touch-icon-114x114.png">
 */ ?>
   </head>
   <body>
@@ -57,7 +57,7 @@ Assets::js(array(
     <div class="fill">
       <div class="container">
         <a class="brand" href="<?=base_url()?>">Bookymark <?php /*<sup>&reg;</sup> */ ?></a>
-        <?php /*=partial('partials/account_partial', $this->data)*/?>
+        <?=$auth->logged_in_box()?>
         </div><!--container-->
         </div><!--fill-->
         </div><!--navbar-inner-->
@@ -72,11 +72,11 @@ Assets::js(array(
 <div class="footer">
 <hr />
 <div class="container">
-<p><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</p>
+<p>By <a href="http://mikefunk.com">Mike Funk</a> <a class="pull-right" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</p>
 </div><!--container-->
 </div><!--footer-->
 </footer>
-<a href="https://github.com/mikedfunk/bookymark"><img style="position: absolute; z-index: 9999; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/mikedfunk/bookymark"><img style="position: fixed; z-index: 9999; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
   </body>
 </html>
 <?php

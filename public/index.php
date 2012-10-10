@@ -18,7 +18,15 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
+// define('ENVIRONMENT', 'development');
+if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == 'bookymark.dev')
+{
 	define('ENVIRONMENT', 'development');
+}
+else
+{
+	define('ENVIRONMENT', 'production');
+}
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
