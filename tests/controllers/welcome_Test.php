@@ -43,12 +43,13 @@ class welcome_Test extends CIUnit_TestCase
 	 * @access public
 	 * @return void
 	 */
-	public function setUp()
+	public function __construct()
 	{
-		parent::setUp();
+		parent::__construct();
 		
 		// Set the tested controller
-		$this->_ci = set_controller('welcome');
+		$this->_ci =& set_controller('welcome');
+		$this->_ci->router->class = 'welcome';
 	}
 	
 	// --------------------------------------------------------------------------
@@ -75,7 +76,7 @@ class welcome_Test extends CIUnit_TestCase
 	public function test_index()
 	{
 		// test
-		$this->_ci->index();
+		$this->_ci->_remap('index');
 		$out = output();
 		
 		// Check if the content is OK

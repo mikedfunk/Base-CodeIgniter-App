@@ -93,6 +93,7 @@ class MY_Loader extends CI_Loader
             {
                 $this->spark($s);
             }
+            return;
         }
 
         $spark = ltrim($spark, '/');

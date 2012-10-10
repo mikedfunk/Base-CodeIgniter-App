@@ -53,6 +53,9 @@ class MY_Controller extends CI_Controller
      */
     protected $helpers = array();
 
+    public $before_filters = array();
+	public $after_filters = array();
+
     /* --------------------------------------------------------------
      * GENERIC METHODS
      * ------------------------------------------------------------ */
@@ -67,6 +70,7 @@ class MY_Controller extends CI_Controller
 
         $this->_load_models();
         $this->_load_helpers();
+        // $this->_migrate();
     }
 
     /* --------------------------------------------------------------
@@ -79,24 +83,34 @@ class MY_Controller extends CI_Controller
      * autoload the view into the layout.
      */
     public function _remap($method)
-    {
-        if (method_exists($this, $method))
-        {
-            call_user_func_array(array($this, $method), array_slice($this->uri->rsegments, 2));
-        }
-        else
-        {
-            if (method_exists($this, '_404'))
-            {
-                call_user_func_array(array($this, '_404'), array($method));
-            }
-            else
-            {
-                show_404(strtolower(get_class($this)).'/'.$method);
-            }
-        }
+    {	
+    	try
+    	{
+	        if (method_exists($this, $method))
+	        {
+	        	$parameters = array_slice($this->uri->rsegments, 2);
+	        	$this->_run_filters('before', $method, $parameters);
+	            call_user_func_array(array($this, $method), $parameters);
+	            $this->_run_filters('after', $method, $parameters);
+	        }
+	        else
+	        {
+	            if (method_exists($this, '_404'))
+	            {
+	                call_user_func_array(array($this, '_404'), array($method));
+	            }
+	            else
+	            {
+	                show_404(strtolower(get_class($this)).'/'.$method);
+	            }
+	        }
 
-        $this->_load_view();
+	        $this->_load_view();
+	     }
+	     catch(Exception $e)
+	     {
+		     show_error($e->getMessage());
+	     }
     }
 
     /**
@@ -104,13 +118,13 @@ class MY_Controller extends CI_Controller
      * he or she wishes, otherwise being conventional.
      */
     protected function _load_view()
-    {
+    {	
         // If $this->view == FALSE, we don't want to load anything
         if ($this->view !== FALSE)
         {
             // If $this->view isn't empty, load it. If it isn't, try and guess based on the controller and action name
             $view = (!empty($this->view)) ? $this->view : $this->router->directory . $this->router->class . '/' . $this->router->method;
-
+            
             // Load the view into $yield
             $data['yield'] = $this->load->view($view, $this->data, TRUE);
 
@@ -169,6 +183,17 @@ class MY_Controller extends CI_Controller
      */
     private function _load_models()
     {
+    	// autoload model for this controller
+    	$this->load->helper('inflector');
+
+		$model = strtolower(singular(get_class($this)));
+
+		if (file_exists(APPPATH . 'models/' . $model . '_model.php'))
+		{
+			$this->models[] = $model;
+		}
+
+		// load all models
         foreach ($this->models as $model)
         {
             $this->load->model($this->_model_name($model), $model);
@@ -198,4 +223,44 @@ class MY_Controller extends CI_Controller
             $this->load->helper($helper);
         }
     }
+
+    // --------------------------------------------------------------------------
+
+	protected function _run_filters($what, $action, $parameters)
+	{
+		$what = $what . '_filters';
+
+		foreach ($this->$what as $filter => $details)
+		{
+			if (is_string($details))
+			{
+				$this->$details($action, $parameters);
+			}
+			elseif (is_array($details))
+			{
+				if (in_array($action, @$details['only']) || !in_array($action, @$details['except']))
+				{
+					$this->$filter($action, $parameters);
+				}
+			}
+		}
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * load the latest migration file.
+	 * 
+	 * @access protected
+	 * @return void
+	 */
+	protected function _migrate()
+	{
+		$this->load->library('migration');
+
+		if ( ! $this->migration->latest())
+		{
+			show_error($this->migration->error_string());
+		}
+	}
 }

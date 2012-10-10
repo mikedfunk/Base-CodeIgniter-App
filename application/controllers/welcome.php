@@ -1,6 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+/**
+ * the default welcome controller moved into the yield->layout pattern
+ *
+ * @author Mike Funk
+ * @email mfunk@christianpublishing.com
+ *
+ * @file welcome.php
+ */
+
+/**
+ * Welcome class.
+ * 
+ * @extends MY_Controller
+ */
+class Welcome extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,9 +34,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->spark('assets/1.5.1');
-		$this->load->view('welcome_message');
 	}
 }
-
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
