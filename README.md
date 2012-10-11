@@ -12,7 +12,7 @@ A starting point CodeIgniter App filled with useful goodies.
    2. application/logs
    2. application/db_cache
    3. public/assets/cache
-   
+
 That's it! No submodules because they are a pain.
 
 ## Usage
@@ -29,7 +29,8 @@ That's it! No submodules because they are a pain.
 * [Pigeon](https://github.com/jamierumbelow/pigeon) and [API_Router](https://github.com/efendibooks/codeigniter-handbook-vol-2/blob/master/application/controllers/api_router.php) for RESTful routing
 * Updated [MY_Migration](https://github.com/mikedfunk/MY_Migration). You can set the migration table in ```application/config/migration.php```
 * [MY_Form_validation](https://github.com/mikedfunk/MY_Form_validation) for a prefix and suffix for each form error. Set it in ```application/config/form_validation.php```
-* Moved all public stuff such as index.php and assets to ```/public/```
+* All public stuff such as index.php and assets goes in ```/public/```
+* Add a [Composer](http://getcomposer.org) package by editing ```/composer.json```, then run ```php composer.phar install``` on the command line from the root directory.
 
 ## But wait, there's more!
 

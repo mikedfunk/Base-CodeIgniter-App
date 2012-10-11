@@ -1,0 +1,91 @@
+[
+    {
+        "name": "qafoolabs/errorhandler",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/QafooLabs/ErrorHandler.git",
+            "reference": "1.0.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/QafooLabs/ErrorHandler/zipball/1.0.0",
+            "reference": "1.0.0",
+            "shasum": ""
+        },
+        "time": "2012-09-11 20:13:35",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "QafooLabs\\ErrorHandler": "src/main"
+            }
+        },
+        "authors": [
+            {
+                "name": "Tobias Schlitt",
+                "email": "toby@qafoo.com"
+            },
+            {
+                "name": "Kore Nordmann",
+                "email": "kore@qafoo.com"
+            },
+            {
+                "name": "Jakob Westhoff",
+                "email": "jakob@qafoo.com"
+            },
+            {
+                "name": "Manuel Pichler",
+                "email": "manuel@qafoo.com"
+            }
+        ],
+        "description": "Utility library to handle native errors, notices and warnings in PHP"
+    },
+    {
+        "name": "qafoolabs/restclient",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/QafooLabs/RestClient.git",
+            "reference": "1.0.1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/QafooLabs/RestClient/zipball/1.0.1",
+            "reference": "1.0.1",
+            "shasum": ""
+        },
+        "require": {
+            "qafoolabs/errorhandler": "*"
+        },
+        "time": "2012-10-11 08:51:27",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "QafooLabs\\RestClient": "src/main"
+            }
+        },
+        "authors": [
+            {
+                "name": "Tobias Schlitt",
+                "email": "toby@qafoo.com"
+            },
+            {
+                "name": "Kore Nordmann",
+                "email": "kore@qafoo.com"
+            },
+            {
+                "name": "Jakob Westhoff",
+                "email": "jakob@qafoo.com"
+            },
+            {
+                "name": "Manuel Pichler",
+                "email": "manuel@qafoo.com"
+            }
+        ],
+        "description": "Really simple rest client used within some of our projects."
+    }
+]
