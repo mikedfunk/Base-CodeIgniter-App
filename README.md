@@ -47,3 +47,24 @@ That's it! No submodules because they are a pain.
 * API exception handler and manifest library to return formatted API help (both in ```application/libraries/api```)
 * .htaccess from [HTML5 Boilerplate](http://html5boilerplate.com) with CodeIgniter stuff to remove index.php
 * main config and database config are separated into folders for four typical development environments. I usually add environment setting logic based on the HTTP_HOST in index.php.
+
+## Change Log
+
+**2.0.0**
+
+* Added most things above. No need to repeat the entire README again :) .
+
+**1.1.2**
+
+* Updated submodules
+
+**1.1.1**
+
+* Updated Twitter Bootstrap to 2.0.2
+* Removed copyright statements from docblocks
+* Updated all relevant docblocks to @version 1.1.2
+
+**1.1.0**
+
+* Support for travis-ci
+* Updated db config

@@ -48,27 +48,29 @@ $route['404_override'] = '';
 // API ROUTES
 
 // require_once(APPPATH.'libraries/pigeon.php');
-//
+// 
 // Pigeon::map(function($r)
 // {
+// 	$r->options('bookmarks', 'bookmarks/index');
+// 	$r->options('bookmarks/(:any)', 'bookmarks/$2');
 // 	$r->get('bookmarks', 'bookmarks/index');
-// 	$r->get('bookmarks/(:any)', 'bookmarks/show/$2');
+// 	$r->get('bookmarks/(:any)/(:any)', 'bookmarks/show/$2/$3');
 // 	$r->post('bookmarks', 'bookmarks/create');
 // 	$r->put('bookmarks/(:num)', 'bookmarks/update/$2');
 // 	$r->delete('bookmarks/(:num)', 'bookmarks/delete/$2');
 // });
 // $route = Pigeon::draw();
-//
+// 
 // foreach ($route as $key => $val)
 // {
 // 	$route['api/(v[0-9]+\/)?' . $key . '(\.[a-zA-Z0-9]+)?'] = 'api_router/index/$1/' . $route[$key];
 // 	unset($route[$key]);
 // }
-//
+// 
 // // OTHER GET ROUTES
-//
+// 
 // $route['bookmarks/new'] = 'bookmarks/create_new';
-//
+// 
 // // reserved routes
 // $route['default_controller'] = "home";
 // $route['404_override'] = '';
