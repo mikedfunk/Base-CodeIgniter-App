@@ -1,0 +1,67 @@
+List of features to be implemented soon:
+		
+New files to be generated:
+	- Libraries
+		Optionally, the CodeIgniter object can be added by appending
+		a plus sign to its name.
+		Example: fire library+ azauth azakis
+		
+		Same rules applies to controllers and libraries: prepend a plus
+		sign to the name of a library to add the CodeIgniter object to a
+		specific class.
+		Example: fire library azauth +azakis
+		
+		Libraries can also be generated using the lib alias.
+		Example: fire lib azauth
+		
+	- Configuration files.
+		The $config array will be created.
+		Example: fire config form_validation
+		
+	- Helpers
+		Nothing particular here, just a generic CodeIgniter file.
+		Example: fire helper application
+		
+Completed Tasks:
+
+- views and models can automatically be created by appending a plus sign after the 
+	keyword controller.
+	Example: fire controller+ posts: index view edit.
+	In this example, the Posts controller will be created. The Post model
+	will also be created along with a new posts folder in the views folder
+	containing the index.php, view.php and edit.php files.
+	
+	You can also add methods to the generated methods by overriding them:
+	Example: fire controller+ posts: index edit. model post: get_one
+	
+	Additionally, you can generate views and models for specific controllers
+	by prepending a plus sign to the name of the controller:
+	Example: fire controller +posts: index view. comments
+	This query will create the Posts controller along with its model and views
+	and the Comments controller with no actions or model or views.
+
+New query syntax:
+	- new action/method: a semi-colon after the name of the controller/model and
+		a full stop after the name of the last action/method.
+		Example: fire controller posts: index view edit add delete.
+
+		New controllers/methods will be created automatically.
+		Example: fire controller posts: index view edit add delete. comments: add delete _is_spam
+			The previous query will create the Posts controller and
+			the Comments controller; notice that I left out the full
+			stop after the last action of the Comments controller: the
+			full stop is optional if it's at the end of the query.
+
+		Example: fire controller posts: index view. model post: get_one get_many
+			This is an example to show that you can also create a combination of
+			controller and model.
+
+	- View files for a specific controller. This is the same as creating
+		controllers except that you have to prepend an exclemation mark
+		before the name of the controller.
+		Example: fire view !posts: index view secret_page
+		Note that if the controller doesn't exist, fire will ask you if
+		you want to create it and if you it to add actions automatically
+		depending on the view you tried to create. So in the example above
+		the index, view and secret_page actions will be created.
+		NOTICE: No need for the exclamation mark!
