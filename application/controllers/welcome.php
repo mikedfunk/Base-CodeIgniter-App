@@ -34,6 +34,8 @@ class Welcome extends MY_Controller {
 	public function index()
 	{
 		$this->load->spark('assets/1.5.1');
+		$this->load->library(array('fb', 'firephp'));
+		$this->firephp->log('Yo! FirePHP Installed!');
 	}
 }
 /* End of file welcome.php */
