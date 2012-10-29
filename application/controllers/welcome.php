@@ -14,7 +14,18 @@
  *
  * @extends MY_Controller
  */
-class Welcome extends MY_Controller {
+class Welcome extends MY_Controller
+{
+
+	/**
+	 * functions to run before each controller method
+	 *
+	 * (default value: array('_profiler'))
+	 *
+	 * @var string
+	 * @access public
+	 */
+	public $before_filters = array('_profiler');
 
 	/**
 	 * Index Page for this controller.
@@ -36,6 +47,17 @@ class Welcome extends MY_Controller {
 		$this->load->spark('assets/1.5.1');
 		// $this->load->library('firephp');
 		// $this->firephp->log('FirePHP Installed!');
+	}
+
+	/**
+	 * enable profiler if in development environment.
+	 *
+	 * @access protected
+	 * @return void
+	 */
+	protected function _profiler()
+	{
+		$this->output->enable_profiler(ENVIRONMENT == 'development' && !$this->input->is_ajax_request());
 	}
 }
 /* End of file welcome.php */
