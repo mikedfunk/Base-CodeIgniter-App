@@ -70,6 +70,11 @@ class MY_Controller extends CI_Controller
 
         $this->_load_models();
         $this->_load_helpers();
+
+        // enable profiler if in development environment and not ajax request
+        $this->output->enable_profiler(ENVIRONMENT == 'development' && !$this->input->is_ajax_request());
+
+        // migrate to latest version
         // $this->_migrate();
     }
 
@@ -83,7 +88,7 @@ class MY_Controller extends CI_Controller
      * autoload the view into the layout.
      */
     public function _remap($method)
-    {	
+    {
     	try
     	{
 	        if (method_exists($this, $method))
@@ -118,13 +123,13 @@ class MY_Controller extends CI_Controller
      * he or she wishes, otherwise being conventional.
      */
     protected function _load_view()
-    {	
+    {
         // If $this->view == FALSE, we don't want to load anything
         if ($this->view !== FALSE)
         {
             // If $this->view isn't empty, load it. If it isn't, try and guess based on the controller and action name
             $view = (!empty($this->view)) ? $this->view : $this->router->directory . $this->router->class . '/' . $this->router->method;
-            
+
             // Load the view into $yield
             $data['yield'] = $this->load->view($view, $this->data, TRUE);
 
@@ -245,12 +250,12 @@ class MY_Controller extends CI_Controller
 			}
 		}
 	}
-	
+
 	// --------------------------------------------------------------------------
-	
+
 	/**
 	 * load the latest migration file.
-	 * 
+	 *
 	 * @access protected
 	 * @return void
 	 */
