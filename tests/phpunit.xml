@@ -31,5 +31,10 @@
         <testsuite name="SystemTests">
             <directory suffix=".php">system</directory>
         </testsuite>
+		<!--
+<testsuite name="FunctionalTests">
+            <directory suffix=".php">functional</directory>
+        </testsuite>
+-->
     </testsuites>
 </phpunit>
