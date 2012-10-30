@@ -43,13 +43,24 @@ That's it! No submodules because they are a pain.
    * [events](http://getsparks.org/packages/events/versions/HEAD/show) - event-driven development
    * [query string helper](http://getsparks.org/packages/query_string_helper/versions/HEAD/show) - makes working with query-string heavy apps much easier
    * [REST client](http://getsparks.org/packages/restclient/versions/HEAD/show) - to interact with RESTful APIs
-* Includes [Kenji's CIUnit](https://bitbucket.org/kenjis/my-ciunit) for unit testing of models, controllers, helpers, libraries
+* Includes [Kenji's CIUnit](https://bitbucket.org/kenjis/my-ciunit) for unit testing of models, controllers, helpers, libraries. Unit test examples are in ```tests/folder_name```. There is a working controller test in ```tests/controllers/welcome_Test.php```
 * [Twitter Bootstrap](twitter.github.com/bootstrap/) for easy, responsive, beautiful, customizable, cross-browser UI goodness.
 * API exception handler and manifest library to return formatted API help (both in ```application/libraries/api```)
 * .htaccess from [HTML5 Boilerplate](http://html5boilerplate.com) with CodeIgniter stuff to remove index.php
 * main config and database config are separated into folders for four typical development environments. I usually add environment setting logic based on the HTTP_HOST in index.php.
+* Includes FirePHP
 
 ## Change Log
+
+**2.0.1**
+
+* Added FirePHP library
+* Added example for Selenium functional test thanks to [Phil Palmieri](https://github.com/philpalmieri)'s examples
+* Added examples for model, helper, and library tests
+* Updated Twitter Bootstrap to 2.2.0
+* Show profiler by default if in development environment and it's not an ajax request
+* Added autoload sparks line
+* Better gitignore
 
 **2.0.0**
 

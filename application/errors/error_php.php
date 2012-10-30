@@ -1,10 +1,25 @@
-<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-<h4>A PHP Error was encountered</h4>
+/**
+ * PHP error template
+ *
+ * @author Mike Funk
+ * @email mfunk@christianpublishing.com
+ *
+ * @file error_php.php
+ */
 
-<p>Severity: <?php echo $severity; ?></p>
-<p>Message:  <?php echo $message; ?></p>
-<p>Filename: <?php echo $filepath; ?></p>
-<p>Line Number: <?php echo $line; ?></p>
-
+ // --------------------------------------------------------------------------
+?>
+<div class="alert alert-block alert-error">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4>An Error Was Encountered</h4>
+  <hr>
+  <p><strong>Message:</strong> <?=$message?></p>
+  <p><strong>Line Number:</strong> <?=$line?></p>
+  <p><strong>File Path:</strong> <?=$filepath?></p>
+  <p><strong>Severity:</strong> <?=$severity?></p>
 </div>
+<?php
+/* End of file error_php.php */
+/* Location: ./application/errors/error_php.php */

@@ -1,0 +1,3 @@
+[submodule "WebFire"]
+	path = WebFire
+	url = git@github.com:AzizLight/WebFire.git

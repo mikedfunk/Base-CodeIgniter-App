@@ -14,7 +14,18 @@
  *
  * @extends MY_Controller
  */
-class Welcome extends MY_Controller {
+class Welcome extends MY_Controller
+{
+
+	/**
+	 * functions to run before each controller method
+	 *
+	 * (default value: array('_public'))
+	 *
+	 * @var string
+	 * @access public
+	 */
+	public $before_filters = array('_public');
 
 	/**
 	 * Index Page for this controller.
@@ -32,6 +43,18 @@ class Welcome extends MY_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
+	{
+		// autoloads view in views/welcome/index.php
+		// surrounds with default layout in views/layouts/application.php
+	}
+
+	/**
+	 * load stuff for public pages.
+	 *
+	 * @access protected
+	 * @return void
+	 */
+	protected function _public()
 	{
 		$this->load->spark('assets/1.5.1');
 	}
