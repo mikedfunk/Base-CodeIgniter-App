@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Welcome to CodeIgniter</title>
 
-	<style type="text/css">
+<?php /*	<style type="text/css">
 
 	::selection{ background-color: #E13300; color: white; }
 	::moz-selection{ background-color: #E13300; color: white; }
@@ -62,14 +62,14 @@
 		border: 1px solid #D0D0D0;
 		-webkit-box-shadow: 0 0 8px #D0D0D0;
 	}
-	</style>
+	</style> */ ?>
 
-	<?php // Assets::css(array('assets/bootstrap/css/bootstrap.min.css')); ?>
+	<?php $this->assets->css(array('assets/components/bootstrap/docs/assets/css/bootstrap.css')); ?>
 
 </head>
 <body>
 
-<div id="container">
+<div class="container">
 <?=$yield?>
 </div>
 

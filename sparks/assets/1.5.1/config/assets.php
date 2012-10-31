@@ -21,7 +21,7 @@ $config['assets']['freeze']               = false;
 |--------------------------------------------------------------------------
 |
 | Define if the cache folder should be cleared when generating new cache files
-| 
+|
 */
 
 $config['assets']['auto_clear_cache']     = true;

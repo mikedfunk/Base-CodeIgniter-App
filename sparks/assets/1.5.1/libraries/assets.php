@@ -1,5 +1,5 @@
-<?php  if (!defined('BASEPATH')) exit('No direct script access allowed');	
-	
+<?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
+
 /**
  * Assets Library
  *
@@ -12,7 +12,7 @@ define('ASSETS_VERSION', '1.5.1');
 
 
 class Assets {
-	
+
 	protected static $_ci;
 	protected static $_less;
 	protected static $_cache_info;
@@ -23,7 +23,7 @@ class Assets {
 	// All the assets go in here
 	private static $_assets = array('js' => array(), 'css' => array());
 
-	
+
 	// Prefixes and groups
 	public static $group;
 	public static $default_group = array(
@@ -55,7 +55,7 @@ class Assets {
 	// CssMin config
 	public static $cssmin_plugins       = array();
 	public static $cssmin_filters       = array();
-	
+
 	// Flags
 	public static  $auto_cleared_css_cache = false;
 	public static  $auto_cleared_js_cache  = false;
@@ -64,9 +64,9 @@ class Assets {
 	private static $_less_loaded           = false;
 	private static $_coffeescript_loaded   = false;
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Display CSS tags
 	 * @param  array  $files
@@ -94,9 +94,9 @@ class Assets {
 		return self::_generate_tags('css');
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Display a group of CSS tags
 	 * @param  string $group
@@ -126,9 +126,9 @@ class Assets {
 		return self::_generate_tags('css');
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Display JS tags
 	 * @param  array  $files
@@ -157,9 +157,9 @@ class Assets {
 		return self::_generate_tags('js');
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Display a group of JS tags
 	 * @param  string $group
@@ -189,9 +189,9 @@ class Assets {
 		return self::_generate_tags('js');
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Simply return html tags with CDN paths
 	 * @param  array $assets
@@ -238,9 +238,9 @@ class Assets {
 		}
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Place string in IE conditional comments
 	 * @param  string $condition
@@ -264,11 +264,11 @@ class Assets {
 			}
 			else
 			{
-				echo $string;	
+				echo $string;
 			}
-			
+
 			echo '<![endif]-->';
-			
+
 			// End benchmark
 			if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::conditional()_end");
 		}
@@ -276,9 +276,9 @@ class Assets {
 
 
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Add assets to list for processing
 	 * @param array  $assets
@@ -306,7 +306,7 @@ class Assets {
 		// List of active files in group
 		if (isset(self::$_cache_info->{$type}->{$group}->file_list)) self::$_assets[$type][$group]['file_list'] = self::$_cache_info->{$type}->{$group}->file_list;
 		else                                                         self::$_assets[$type][$group]['file_list'] = array();
-		
+
 		// Add assets to list
 		foreach ($assets as $asset)
 		{
@@ -333,14 +333,14 @@ class Assets {
 		}
 
 		self::$_assets[$type][$group]['file_list'] = array_unique(self::$_assets[$type][$group]['file_list']);
-		
+
 		// End benchmark
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::add-assets()_end");
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Process assets in group
 	 * @param  string $type
@@ -479,9 +479,9 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::process(".$type.", ".$group.")_end");
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Process all CSS @imports and parse URL's
 	 * @param  string $contents
@@ -497,7 +497,7 @@ class Assets {
 
 		// Process URL's
 		$contents = self::_process_urls($contents, $asset_location);
-		
+
 		// Find @import calls
 		$imports_exist = preg_match_all("/@import\s+(.*);/", $contents, $imports);
 
@@ -520,7 +520,7 @@ class Assets {
 				// Path info
 				$import_info     = pathinfo($import_file);
 				$import_info_dir = ($import_info['dirname'] and $import_info['dirname'] !== ".") ? $import_info['dirname'] : null;
-				
+
 				// Path to file
 				$import_file_path = reduce_double_slashes(self::$css_path.'/'.$import_file);
 
@@ -559,9 +559,9 @@ class Assets {
 		);
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Find all URL's and process em accordingly
 	 * @param  string $contents
@@ -628,9 +628,9 @@ class Assets {
 		return $contents;
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Find last modified time in list of files
 	 * @param  string $type  - css or js (can be null)
@@ -687,9 +687,9 @@ class Assets {
 		return $last_modified;
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Cache all assets of this type
 	 * @param  string $type
@@ -705,7 +705,7 @@ class Assets {
 			self::clear_css_cache(self::$group, false);
 			self::$auto_cleared_css_cache = true;
 		}
-		
+
 		if ($type == 'js' and (self::$auto_clear_cache or self::$auto_clear_js_cache) and ! self::$auto_cleared_js_cache)
 		{
 			self::clear_js_cache(self::$group, false);
@@ -716,7 +716,7 @@ class Assets {
 		foreach (self::$_assets[$type] as $key=>$assets_group)
 		{
 			$file_path = self::$cache_path."/".$assets_group['cache_file_name'];
-			
+
 			write_file($file_path, $assets_group['output']);
 
 			// Remove contents after caching
@@ -727,9 +727,9 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::cache_assets()_end");
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Get/parse contents of cache info file
 	 * @return object
@@ -740,14 +740,14 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::_get_cache_info()_start");
 
 		self::$_cache_info = @json_decode(read_file(self::$cache_path.'/'.self::$_cache_info_file));
-		
+
 		// End benchmark
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::_get_cache_info()_end");
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Displays cahce info
 	 * @return string
@@ -757,9 +757,9 @@ class Assets {
 		echo '<pre>'; print_r(self::$_cache_info); echo '</pre>';
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Update cache info file
 	 */
@@ -794,9 +794,9 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::_update_cache_info()_end");
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Generate and output HTML tags
 	 * @param  string  $type
@@ -847,9 +847,9 @@ class Assets {
 		}
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Display a HTML tag
 	 * @param  string  $file
@@ -874,9 +874,9 @@ class Assets {
 		else       return $tag;
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Delete cached files
 	 * @param  string $type
@@ -924,7 +924,7 @@ class Assets {
 
 
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Delete cached CSS files
 	 * @param  string $asset_file
@@ -933,10 +933,10 @@ class Assets {
 	{
 		return self::clear_cache('css', $group, $init);
 	}
-	
-	
+
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Delete cached JS files
 	 * @param  string $asset_file
@@ -946,16 +946,16 @@ class Assets {
 		return self::clear_cache('js', $group, $init);
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	public static function clear_assets()
 	{
 		self::$_assets = array('js' => array(), 'css' => array());
 	}
 
-	
-	
+
+
 	/* ------------------------------------------------------------------------------------------ */
 	/* !/===> URL / Image helpers */
 	/* ------------------------------------------------------------------------------------------ */
@@ -970,9 +970,9 @@ class Assets {
 		return self::$base_url.'/'.$path;
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Return url to image, or event an entire tag
 	 * @param  string $path
@@ -1005,13 +1005,13 @@ class Assets {
 		}
 	}
 
-	
-	
+
+
 	/* ------------------------------------------------------------------------------------------ */
 	/* !/===> Initialization and configuration */
 	/* ------------------------------------------------------------------------------------------ */
-	
-	
+
+
 	/**
 	 * Library initialization
 	 * @param  array $cfg
@@ -1046,9 +1046,9 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::init()_end");
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	private static function _init_cssmin()
 	{
 		if (self::$minify_css and ! self::$freeze and ! self::$_cssmin_loaded)
@@ -1069,9 +1069,9 @@ class Assets {
 		}
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	private static function _init_jsmin()
 	{
 		if (self::$minify_js and ! self::$freeze and ! self::$_jsmin_loaded)
@@ -1089,9 +1089,9 @@ class Assets {
 		}
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	private static function _init_less()
 	{
 		if ( ! self::$freeze and ! self::$_less_loaded)
@@ -1102,7 +1102,7 @@ class Assets {
 			// Load LessPHP
 			if (defined('SPARKPATH')) include(reduce_double_slashes(SPARKPATH.'assets/'.ASSETS_VERSION.'/libraries/lessc.php'));
 			else                      include(reduce_double_slashes(APPPATH.'/third_party/assets/lessc.php'));
-			
+
 			// Initialize
 			self::$_less = new lessc();
 			self::$_less->importDir = self::$css_path.'/';
@@ -1113,9 +1113,9 @@ class Assets {
 		}
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	private static function _init_coffeescript()
 	{
 		if ( ! self::$freeze and ! self::$_coffeescript_loaded)
@@ -1136,9 +1136,9 @@ class Assets {
 		}
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Library configuration
 	 * @param  array  $cfg
@@ -1170,9 +1170,9 @@ class Assets {
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::configure()_end");
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Set a different assets path
 	 * @param string $path
@@ -1186,9 +1186,9 @@ class Assets {
 		self::_paths();
 	}
 
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 	/**
 	 * Setup paths
 	 */
@@ -1199,7 +1199,10 @@ class Assets {
 
 		// Set the assets base path
 		self::$base_path = reduce_double_slashes(realpath(self::$assets_dir));
-		
+
+		// use the public dir for loading assets, saving and reading cache
+		if (ENVIRONMENT == 'testing') self::$base_path = str_replace('/tests', '/public', self::$base_path);
+
 		// Now set the assets base URL
 		if ( ! self::$base_url) self::$base_url = reduce_double_slashes(config_item('base_url').'/'.self::$assets_dir);
 		else                    self::$base_url = self::$base_url.self::$assets_dir;
@@ -1225,23 +1228,23 @@ class Assets {
 			{
 				if ( ! @mkdir(self::$js_path, 0755))    exit('Error with JS directory.');
 			}
-			
+
 			if ( ! is_dir(self::$css_path))
 			{
 				if ( ! @mkdir(self::$css_path, 0755))   exit('Error with CSS directory.');
 			}
-			
+
 			if ( ! is_dir(self::$cache_path))
 			{
 				if ( ! @mkdir(self::$cache_path, 0777)) exit('Error with CACHE directory.');
 			}
-			
+
 			// Try to make the cache direcory writable
 			if (is_dir(self::$cache_path) and ! is_really_writable(self::$cache_path))
 			{
 				@chmod(self::$cache_path, 0777);
 			}
-			
+
 			// If it's still not writable throw error
 			if ( ! is_dir(self::$cache_path) or ! is_really_writable(self::$cache_path))
 			{
@@ -1252,9 +1255,9 @@ class Assets {
 		// End benchmark
 		if (self::$_enable_benchmark) self::$_ci->benchmark->mark("Assets::paths()_end");
 	}
-	
+
 	/* ------------------------------------------------------------------------------------------ */
-	
+
 }
 
 

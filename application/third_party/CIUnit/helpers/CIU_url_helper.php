@@ -47,7 +47,7 @@ if ( ! function_exists('redirect'))
 		{
 			$uri = site_url($uri);
 		}
-	
+
 		switch($method)
 		{
 			case 'refresh'	: $GLOBALS['OUT']->set_header("Refresh:0;url=".$uri);
