@@ -38,7 +38,7 @@ That's it! No submodules because they are a pain.
 * caching fragments available via the fragment library, repeating partial views via the partial helper
 * Using MY_Log to fix chmod issues
 * Includes [Sparks](http://getsparks.org) with the following sparks:
-   * [assets](http://getsparks.org/packages/assets/versions/HEAD/show) - for easy combining, minifying, and caching of js/css and parsing LESS and CoffeeScript
+   * [assets](http://getsparks.org/packages/assets/versions/HEAD/show) - for easy combining, minifying, and caching of js/css and parsing LESS and CoffeeScript. I added a line to make this work with unit tests as well.
    * [curl](http://getsparks.org/packages/curl/versions/HEAD/show) - makes curl codeignitery
    * [events](http://getsparks.org/packages/events/versions/HEAD/show) - event-driven development
    * [query string helper](http://getsparks.org/packages/query_string_helper/versions/HEAD/show) - makes working with query-string heavy apps much easier
@@ -48,14 +48,16 @@ That's it! No submodules because they are a pain.
 * API exception handler and manifest library to return formatted API help (both in ```application/libraries/api```)
 * .htaccess from [HTML5 Boilerplate](http://html5boilerplate.com) with CodeIgniter stuff to remove index.php
 * main config and database config are separated into folders for four typical development environments. I usually add environment setting logic based on the HTTP_HOST in index.php.
-* Includes FirePHP
+* [FirePHP](http://firephp.org) library for console debugging
+* [Bower](https://github.com/twitter/bower) for composer-like installation of CSS/JS/HTML/IMG assets. Twitter Bootstrap and JQuery installed to ```assets/components```.
+
 
 ## Change Log
 
 **2.0.1**
 
 * Added FirePHP library
-* Added example for Selenium functional test thanks to [Phil Palmieri](https://github.com/philpalmieri)'s examples
+* Added example for Selenium functional test thanks to [Phil Palmieri](https://github.com/philpalmieri)'s examples. To run this test, modify the url accordingly and uncomment the ```functional``` directory line in ```tests/phpunit.xml```.
 * Added examples for model, helper, and library tests
 * Updated Twitter Bootstrap to 2.2.0
 * Show profiler by default if in development environment and it's not an ajax request
