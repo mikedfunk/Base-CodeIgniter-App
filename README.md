@@ -49,13 +49,14 @@ That's it! No submodules because they are a pain.
 * .htaccess from [HTML5 Boilerplate](http://html5boilerplate.com) with CodeIgniter stuff to remove index.php
 * main config and database config are separated into folders for four typical development environments. I usually add environment setting logic based on the HTTP_HOST in index.php.
 * [FirePHP](http://firephp.org) library for console debugging
-* [Bower](https://github.com/twitter/bower) for composer-like installation of CSS/JS/HTML/IMG assets. Twitter Bootstrap and JQuery installed to ```assets/components```.
+* [Bower](https://github.com/twitter/bower) for composer-like installation of CSS/JS/HTML/IMG assets. Twitter Bootstrap and JQuery installed to ```assets```.
 
 
 ## Change Log
 
 **2.0.1**
 
+* Added bower component installation
 * Added FirePHP library
 * Added example for Selenium functional test thanks to [Phil Palmieri](https://github.com/philpalmieri)'s examples. To run this test, modify the url accordingly and uncomment the ```functional``` directory line in ```tests/phpunit.xml```.
 * Added examples for model, helper, and library tests
