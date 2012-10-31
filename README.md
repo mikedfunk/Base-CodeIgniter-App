@@ -54,9 +54,12 @@ That's it! No submodules because they are a pain.
 
 ## Change Log
 
+**2.0.2**
+* Installed twitter bootstrap and jquery via bower. Update these on CLI from the ```assets``` dir via ```bower update bootstrap```, ```bower update jquery```, etc.
+* Fixed bug in assets spark with unit tests
+
 **2.0.1**
 
-* Added bower component installation
 * Added FirePHP library
 * Added example for Selenium functional test thanks to [Phil Palmieri](https://github.com/philpalmieri)'s examples. To run this test, modify the url accordingly and uncomment the ```functional``` directory line in ```tests/phpunit.xml```.
 * Added examples for model, helper, and library tests
