@@ -14,7 +14,6 @@
 <div class="alert alert-block alert-error">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <h4>An Error Was Encountered</h4>
-  <hr>
   <p><strong>Message:</strong> <?=$message?></p>
   <p><strong>Line Number:</strong> <?=$line?></p>
   <p><strong>File Path:</strong> <?=$filepath?></p>
