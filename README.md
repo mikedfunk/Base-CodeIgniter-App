@@ -58,6 +58,7 @@ That's it! No submodules because they are a pain.
 * Installed twitter bootstrap and jquery via bower. Update these on CLI from the ```assets``` dir via ```bower update bootstrap```, ```bower update jquery```, etc.
 * Fixed bug in assets spark with unit tests
 * Refined selenium example test
+* Added [MY_Exceptions.php](https://github.com/mikedfunk/CodeIgniter-Email-PHP-Errors) and related config file to allow emailing of PHP errors. Disabled by default.
 
 **2.0.1**
 
