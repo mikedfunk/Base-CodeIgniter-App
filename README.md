@@ -49,7 +49,7 @@ That's it! No submodules because they are a pain.
 * .htaccess from [HTML5 Boilerplate](http://html5boilerplate.com) with CodeIgniter stuff to remove index.php
 * main config and database config are separated into folders for four typical development environments. I usually add environment setting logic based on the HTTP_HOST in index.php.
 * [FirePHP](http://firephp.org) library for console debugging
-* [Bower](https://github.com/twitter/bower) for composer-like installation of CSS/JS/HTML/IMG assets. Twitter Bootstrap and JQuery installed to ```assets```.
+* [Bower](https://github.com/twitter/bower) for composer-like installation of CSS/JS/HTML/IMG assets. Twitter Bootstrap and JQuery installed to ```assets/components```.
 
 
 ## Change Log

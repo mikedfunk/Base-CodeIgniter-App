@@ -64,7 +64,7 @@
 	}
 	</style> */ ?>
 
-	<?php $this->assets->css(array('assets/bootstrap/docs/assets/css/bootstrap.css')); ?>
+	<?php $this->assets->css(array('assets/components/bootstrap/docs/assets/css/bootstrap.css')); ?>
 
 </head>
 <body>
