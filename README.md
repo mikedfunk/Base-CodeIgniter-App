@@ -45,6 +45,7 @@ That's it! No submodules because they are a pain.
    * [REST client](http://getsparks.org/packages/restclient/versions/HEAD/show) - to interact with RESTful APIs
 * Includes [Kenji's CIUnit](https://bitbucket.org/kenjis/my-ciunit) for unit testing of models, controllers, helpers, libraries. Unit test examples are in ```tests/folder_name```. There is a working controller test in ```tests/controllers/welcome_Test.php```
 * [Twitter Bootstrap](twitter.github.com/bootstrap/) for easy, responsive, beautiful, customizable, cross-browser UI goodness.
+* [Twitter Bootstrap Pagination Config](https://gist.github.com/3504432)
 * API exception handler and manifest library to return formatted API help (both in ```application/libraries/api```)
 * .htaccess from [HTML5 Boilerplate](http://html5boilerplate.com) with CodeIgniter stuff to remove index.php
 * main config and database config are separated into folders for four typical development environments. I usually add environment setting logic based on the HTTP_HOST in index.php.
